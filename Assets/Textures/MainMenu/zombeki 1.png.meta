@@ -134,12 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< HEAD
-    nameFileIdTable: {}
-=======
     nameFileIdTable:
       zombeki 1_0: -6154339050102847145
->>>>>>> jakov
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
