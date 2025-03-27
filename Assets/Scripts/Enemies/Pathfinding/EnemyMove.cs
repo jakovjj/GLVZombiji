@@ -34,6 +34,7 @@ public class EnemyMove : MonoBehaviour
         bool hasDetected = Physics2D.OverlapCircle(transform.position, DetectRadius, whatIsPlayer);
         //Debug.Log(hasDetected);
         bool isInInteractionRadius = Physics2D.OverlapCircle(transform.position, InteractionRadius, whatIsPlayer);
+
         //Debug.Log(isInInteractionRadius);
         if (isInInteractionRadius)
         {
