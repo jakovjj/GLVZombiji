@@ -6,10 +6,14 @@ using UnityEngine.EventSystems;
 
 public class manager : MonoBehaviour
 {
-    [HideInInspector] public int hp;
-    [HideInInspector] public int mhp;
-    [HideInInspector] public int dmg;
+    [HideInInspector] public float hp;
+    [HideInInspector] public float mhp;
+    [HideInInspector] public float rgn;
+    [HideInInspector] public float dmg;
     [HideInInspector] public int coin;
+    [HideInInspector] public int equippedWeapon;
+    [HideInInspector] public int [] weaponCooldown= {1,1,1,1,1};
+     public Projectile[] weaponProjectile = { };
 
     [HideInInspector] public int wave; 
     [HideInInspector] public int timer;
@@ -22,8 +26,8 @@ public class manager : MonoBehaviour
     private IEnumerator tickvar;
 
     void Start() {
-        mhp = 20; hp = mhp;
-        dmg = 1; coin = 0;
+        mhp = 20f; hp = mhp;
+        dmg = 1f; coin = 0;
         wave = 0; timer = 30;
         tickvar = tickTimer();
 
@@ -52,5 +56,10 @@ public class manager : MonoBehaviour
 
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();
+    }
+
+    public float calcDamage(float amount)
+    {
+        return amount;
     }
 }
