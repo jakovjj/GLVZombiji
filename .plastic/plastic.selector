@@ -1,0 +1,4 @@
+repository "zombeki@Glare_Entertainment@cloud"
+  path "/"
+    br "/main"
+    co "/main"
