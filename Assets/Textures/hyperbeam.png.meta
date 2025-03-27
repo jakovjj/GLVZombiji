@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hyperbeam_0: -2652791769582266555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
