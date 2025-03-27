@@ -164,4 +164,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   IdleSpeed: 3
-  ChaseSpeed: 6
+  ChaseSpeed: 3
