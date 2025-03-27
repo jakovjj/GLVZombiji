@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      struja_fizike_0: 8563470563352130204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
