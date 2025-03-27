@@ -1619,11 +1619,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.82
+      value: 8.1
       objectReference: {fileID: 0}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2754171
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2875,6 +2875,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 81362237486581459, guid: 6795854a7998d8945883d1ed2f913135, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 198235961874208944, guid: 6795854a7998d8945883d1ed2f913135, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2582688
@@ -3161,21 +3165,41 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3797126215601021949, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      propertyPath: DetectRadius
+      value: 5.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797126215601021949, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      propertyPath: obstaclesLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8052019856681839628, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052019856681839628, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052019856681839628, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.07047896
+      value: -7.37
       objectReference: {fileID: 0}
     - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.035332
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.077286005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
       propertyPath: m_LocalRotation.w
