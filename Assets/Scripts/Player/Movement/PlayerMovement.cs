@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (movX != 0f || movY != 0f) animator.SetBool("walk", true);
         else animator.SetBool("walk", false);
 
+        
         //Debug.Log(movX+" "+movY);
 
         if (movY < 0f) animator.SetBool("back", false);
