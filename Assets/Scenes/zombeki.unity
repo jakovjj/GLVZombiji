@@ -4400,6 +4400,9 @@ MonoBehaviour:
   weaponCooldown: []
   weaponProjectile:
   - {fileID: 11400000, guid: 2887b0783b93d694a86bcabf2a77ef20, type: 2}
+  bulletPrefabs:
+  - {fileID: 1897620257027733417, guid: f7368ebd711ea0c40b05ba0b434f7b3c, type: 3}
+  - {fileID: 1897620257027733417, guid: c5f562adba0c88748851557e23982e79, type: 3}
   zombie: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
   wave: 0
   timer: 0
