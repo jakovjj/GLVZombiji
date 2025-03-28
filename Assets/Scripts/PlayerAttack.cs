@@ -42,6 +42,7 @@ public class PlayerAttack : MonoBehaviour
         bullet.GetComponent<ProjectileBehaviour>().thisProjectile = bulletType;
         bullet.GetComponent<ProjectileBehaviour>().damage = bulletType.damage;
         gunCooldown = playerStats.weaponCooldown[weapon];
+
         laserSound.Play();
         //Debug.Log("play");
         //thisGunSprite.GetComponent<SpriteRenderer>().sprite = manager.weaponSprite[weapon];
