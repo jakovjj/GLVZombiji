@@ -4073,6 +4073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4481117176260276991, guid: 813c98a57b3a41e4caf75c2f97e590cc, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: b9cbcb563c0b4614282a1cd88a52cc47, type: 2}
     - target: {fileID: 4892798795216636961, guid: 813c98a57b3a41e4caf75c2f97e590cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.2361212
