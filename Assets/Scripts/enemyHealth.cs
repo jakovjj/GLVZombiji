@@ -32,11 +32,11 @@ public class enemyHealth : Health
     {
         health -= amount;
         base.Damage(amount);
-        zombieHurt.Play();
+        //zombieHurt.Play();
     }
     public void destruction()
     {
-        zombieDeath.Play();
+        //zombieDeath.Play();
         Instantiate(coinDrop, transform.position, Quaternion.identity, managerGO.transform);
         Destroy(thisUnit);
     }

@@ -36,7 +36,6 @@ public class PlayerAttack : MonoBehaviour
 
     void shootDefault(int weapon)
     {            
-        Debug.Log("called shoot default with "+weapon);
         weapon = playerStats.equippedWeapon;
         bullet = Instantiate(bulletPrefab.transform, firePoint.position, firePoint.rotation);
         Projectile bulletType = playerStats.weaponProjectile[weapon];
@@ -45,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
         gunCooldown = playerStats.weaponCooldown[weapon];
         laserSound.Play();
         //Debug.Log("play");
-  //      thisGunSprite.GetComponent<SpriteRenderer>().sprite = manager.weaponSprite[weapon];
+        //thisGunSprite.GetComponent<SpriteRenderer>().sprite = manager.weaponSprite[weapon];
     }
     void Awake()
     {
@@ -57,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
         defaultCameraSize = cam.orthographicSize;
         waveStart();
         laserSound.GetComponent<AudioSource>();
-  //      testItem.Pickup();            hrcini zbagani itemi
+        //testItem.Pickup();            hrcini zbagani itemi
     }
 
     public void waveStart()
