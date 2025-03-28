@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisUnit: {fileID: 6507910054846680715}
   healthBar: {fileID: 2816818787262219447, guid: 49aac66d2b337384eb41c0edbed66879, type: 3}
-  maxHealth: 80
+  maxHealth: 79
   healthBarLocation: {fileID: 5005479398438741047}
   coinDrop: {fileID: 5747460456256806824, guid: 8a6cbd79f0572844bac104dc2f1fe354, type: 3}
   managerGO: {fileID: 0}
