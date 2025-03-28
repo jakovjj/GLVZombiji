@@ -33,14 +33,14 @@ public class enemyHealth : MonoBehaviour
         health += regen * Time.deltaTime;
         if (health > maxHealth) health = maxHealth;
     }
-    public void Damage(float amount,GameObject hitTrigger)
+    public void Damage(float amount,Vector3 dir)
     {
         health -= amount;
         //napravi knockback kak god zelis
         gameObject.GetComponent<EnemyMove>().enabled = false;
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
-        Vector3 dir = gameObject.transform.position - hitTrigger.transform.position;
-        gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 15, ForceMode2D.Impulse);
+       // Vector2 dir = gameObject.transform.position - hitTrigger.transform.position;
+        gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 5, ForceMode2D.Impulse);
         StartCoroutine(resetForce());
         //     zombieHurt.Play();
     }

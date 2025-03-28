@@ -14,7 +14,8 @@ public class ProjectileBehaviour : MonoBehaviour
     public delegate void whenIHitSomething(GameObject target);
     public whenIHitSomething OnHit;
     [SerializeField] float lifetime;
-
+    private Vector3 previousPosition;
+    private Vector3 dir;
     [SerializeField] SpriteRenderer self;
     public virtual void Start()
     {
@@ -26,6 +27,11 @@ public class ProjectileBehaviour : MonoBehaviour
     }
     public virtual void FixedUpdate()
     {
+        dir = (transform.position - previousPosition).normalized;
+
+        
+        previousPosition = transform.position;
+
         if (thisProjectile != null)
         {
             thisBullet.transform.Translate(0,thisProjectile.speed,0);
@@ -50,7 +56,7 @@ public class ProjectileBehaviour : MonoBehaviour
             {
                 if (target.tag == "Player") targetHealthScript1 = target.GetComponent<playerHealth>();
                 else targetHealthScript = target.GetComponent<enemyHealth>();
-                if(target.tag=="Enemy")targetHealthScript.Damage(damage,gameObject);
+                if(target.tag=="Enemy")targetHealthScript.Damage(damage,dir);
                 else  targetHealthScript1.Damage(damage,/*daj Vector2 koji predstavlja knockback na playera i izbrisi ovaj new vector2*/new Vector2 { });
                 //OnHit(target.gameObject);
                 currentPierce -= 1;
