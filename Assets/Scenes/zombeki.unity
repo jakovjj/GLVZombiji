@@ -2171,87 +2171,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937102816}
   m_CullTransparentMesh: 1
---- !u!1001 &1123801374
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2512698994748816359, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: zombieHurt
-      value: 
-      objectReference: {fileID: 732618933}
-    - target: {fileID: 2512698994748816359, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: zombieDeath
-      value: 
-      objectReference: {fileID: 732618934}
-    - target: {fileID: 5005479398438741047, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397422010737168576, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Name
-      value: Enemy (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
 --- !u!1 &1177086503
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,6 +2489,7 @@ MonoBehaviour:
   weaponCooldown: []
   weaponProjectile:
   - {fileID: 11400000, guid: 2887b0783b93d694a86bcabf2a77ef20, type: 2}
+  zombie: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
   wave: 0
   timer: 0
   texthp: {fileID: 527794001}
@@ -3116,87 +3036,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637242008}
   m_CullTransparentMesh: 1
---- !u!1001 &1654141604
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2512698994748816359, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: zombieHurt
-      value: 
-      objectReference: {fileID: 732618933}
-    - target: {fileID: 2512698994748816359, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: zombieDeath
-      value: 
-      objectReference: {fileID: 732618934}
-    - target: {fileID: 5005479398438741047, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397422010737168576, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Name
-      value: Enemy (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
 --- !u!114 &1842818949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4000,25 +3839,9 @@ PrefabInstance:
       propertyPath: zombieDeath
       value: 
       objectReference: {fileID: 732618934}
-    - target: {fileID: 5005479398438741047, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397422010737168576, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8952956491634210163, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4135,8 +3958,6 @@ SceneRoots:
   - {fileID: 6149554222151466260}
   - {fileID: 3195012670546521110}
   - {fileID: 50174335}
-  - {fileID: 1654141604}
-  - {fileID: 1123801374}
   - {fileID: 1401685660}
   - {fileID: 1594059821}
   - {fileID: 1901431108}

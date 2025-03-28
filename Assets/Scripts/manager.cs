@@ -15,6 +15,9 @@ public class manager : MonoBehaviour
     [HideInInspector] public float [] weaponCooldown = {};
     public Projectile[] weaponProjectile = { };
 
+    //enemy prefabs
+    public GameObject zombie; 
+
     [HideInInspector] public int wave; 
     [HideInInspector] public int timer;
 
@@ -24,19 +27,28 @@ public class manager : MonoBehaviour
     public Text textcoin;
     public Slider hpbar;
 
-    private IEnumerator tickvar;
-
     void Start() {
         equippedWeapon = 0;
         mhp = 20f; hp = mhp;
         dmg = 1f; coin = 0;
         wave = 0; timer = 30;
-        tickvar = tickTimer();
         weaponCooldown = new float[]{0.2f,0.2f,0.2f,0.2f,0.2f};
+        
 
         newWave();
     }
-   
+    
+    private IEnumerator summonZombie() {
+        while (timer > 0) {
+            yield return new WaitForSeconds(5);
+
+            float posX = Random.Range(-14.0f, 14.0f);
+            float posY = Random.Range(-14.0f, 14.0f); 
+
+            Instantiate(zombie, new Vector3(posX, posY, 0f), Quaternion.identity);
+        }
+    }
+
     private IEnumerator tickTimer() {
         while (timer > 0) {
             yield return new WaitForSeconds(1);
@@ -49,8 +61,8 @@ public class manager : MonoBehaviour
     void newWave() {
         timer = 50;
         wave++;
-
-        StartCoroutine(tickvar);
+        StartCoroutine(summonZombie());
+        StartCoroutine(tickTimer());
     }
 
     void Update() {
