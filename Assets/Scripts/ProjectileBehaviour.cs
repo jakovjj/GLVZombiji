@@ -39,10 +39,6 @@ public class ProjectileBehaviour : MonoBehaviour
  
     void OnTriggerEnter2D(Collider2D target)
     {
-        //Debug.Log(target.tag);
-        //Debug.Log(target);
-        //Debug.Log(thisProjectile);
-        //Debug.Log(thisProjectile.projectileTargets);
         if (thisProjectile.projectileTargets.Contains(target.tag))
         {
             if (target.tag == "Obstacle")
