@@ -50,7 +50,7 @@ public class ProjectileBehaviour : MonoBehaviour
             {
                 if (target.tag == "Player") targetHealthScript1 = target.GetComponent<playerHealth>();
                 else targetHealthScript = target.GetComponent<enemyHealth>();
-                if(target.tag=="Enemy")targetHealthScript.Damage(damage,/*daj Vector2 koji predstavlja knockback na ovog enemyja i izbrisi ovaj new vector2*/new Vector2 { });
+                if(target.tag=="Enemy")targetHealthScript.Damage(damage,gameObject);
                 else  targetHealthScript1.Damage(damage,/*daj Vector2 koji predstavlja knockback na playera i izbrisi ovaj new vector2*/new Vector2 { });
                 //OnHit(target.gameObject);
                 currentPierce -= 1;
