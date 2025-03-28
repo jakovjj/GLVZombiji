@@ -6776,6 +6776,14 @@ PrefabInstance:
       propertyPath: zombieDeath
       value: 
       objectReference: {fileID: 732618934}
+    - target: {fileID: 5397422010737168576, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397422010737168576, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
       propertyPath: m_Name
       value: Enemy
