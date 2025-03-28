@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     private float currentSpeed;
 
-    public manager manager;
+    [HideInInspector] public manager manager;
 
     public float speed;
     [HideInInspector] public float movX;
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDir;
     public bool isDashing;
     public Animator animator;
+
     void Start()
     {
         movX = 0; movY = 0;
@@ -35,14 +36,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (movX != 0f || movY != 0f) animator.SetBool("walk", true);
         else animator.SetBool("walk", false);
-
-        
         //Debug.Log(movX+" "+movY);
 
         if (movY < 0f) animator.SetBool("back", false);
         if (movY > 0f) animator.SetBool("back", true);
+    }
 
-
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Coin") {
+            Destroy(collision.gameObject);
+            manager.coin++;
+        }
     }
 
     void ProcessInput()

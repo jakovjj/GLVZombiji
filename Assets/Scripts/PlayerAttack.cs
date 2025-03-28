@@ -11,7 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public Projectile ammoType;
-    public float gunCooldown;
+    [HideInInspector] public float gunCooldown;
     public Transform bullet;
 
   //  public nostalgia testItem;           hrcini zbagani itemi
@@ -35,7 +35,9 @@ public class PlayerAttack : MonoBehaviour
     public playerShoot shoot;
 
     void shootDefault(int weapon)
-    {             
+    {            
+        //Debug.Log("called shoot default with "+weapon+" cd is "+playerStats.weaponCooldown[0]);
+        weapon = playerStats.equippedWeapon;
         bullet = Instantiate(bulletPrefab.transform, firePoint.position, firePoint.rotation);
         Projectile bulletType = playerStats.weaponProjectile[weapon];
         bullet.GetComponent<ProjectileBehaviour>().thisProjectile = bulletType;
@@ -60,7 +62,7 @@ public class PlayerAttack : MonoBehaviour
     {
         rb.position = new Vector2(0,0);
     }
-    void Update()
+    void Update()   
     {
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetButton("Fire1") & gunCooldown<=0)
@@ -69,6 +71,7 @@ public class PlayerAttack : MonoBehaviour
         }
         cam.orthographicSize=defaultCameraSize;
         gunCooldown -= Time.deltaTime;
+        //Debug.Log(gunCooldown+"s "+playerStats.equippedWeapon);
     }
     private void FixedUpdate()
     {

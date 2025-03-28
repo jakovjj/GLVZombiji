@@ -35,10 +35,10 @@ public class ProjectileBehaviour : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D target)
     {
-        Debug.Log(target.tag);
-        Debug.Log(target);
-        Debug.Log(thisProjectile);
-        Debug.Log(thisProjectile.projectileTargets);
+        //Debug.Log(target.tag);
+        //Debug.Log(target);
+        //Debug.Log(thisProjectile);
+        //Debug.Log(thisProjectile.projectileTargets);
         if (thisProjectile.projectileTargets==target.tag)
         {
             if(target.tag=="Player")targetHealthScript = target.GetComponent<playerHealth>();
