@@ -12,13 +12,14 @@ public class manager : MonoBehaviour
     [HideInInspector] public float dmg;
     [HideInInspector] public int coin;
     [HideInInspector] public int equippedWeapon;
-    [HideInInspector] public float [] weaponCooldown = {};
+    [HideInInspector] public float[] weaponCooldown = { };
     public Projectile[] weaponProjectile = { };
+    public GameObject[] bulletPrefabs= { };
 
     //enemy prefabs
-    public GameObject zombie; 
+    public GameObject zombie;
 
-    [HideInInspector] public int wave; 
+    [HideInInspector] public int wave;
     [HideInInspector] public int timer;
 
     public Text texthp;
@@ -32,8 +33,7 @@ public class manager : MonoBehaviour
         mhp = 20f; hp = mhp;
         dmg = 1f; coin = 0;
         wave = 0; timer = 30;
-        weaponCooldown = new float[]{0.2f,0.2f,0.2f,0.2f,0.2f};
-        
+        weaponCooldown = new float[] { 0.2f, 0.2f, 0.2f, 0.2f, 0.2f };
 
         newWave();
     }

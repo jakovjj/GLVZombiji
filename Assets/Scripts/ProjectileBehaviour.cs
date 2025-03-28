@@ -7,13 +7,16 @@ public class ProjectileBehaviour : MonoBehaviour
     public GameObject thisBullet;
     public Projectile thisProjectile;
     private int currentPierce;
-    Health targetHealthScript;
+    enemyHealth targetHealthScript;
+    playerHealth targetHealthScript1;
     public float damage;
     private AudioSource hit;
+    public delegate void whenIHitSomething(GameObject target);
+    public whenIHitSomething OnHit;
     [SerializeField] float lifetime;
 
     [SerializeField] SpriteRenderer self;
-    void Start()
+    public virtual void Start()
     {
         hit = GameObject.Find("SoundManager").GetComponents<AudioSource>()[3];
         self.sprite = thisProjectile.projectileSprite;
@@ -21,7 +24,7 @@ public class ProjectileBehaviour : MonoBehaviour
         lifetime = thisProjectile.projectileLifetime;
         currentPierce = thisProjectile.projectilePierce;
     }
-    void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (thisProjectile != null)
         {
@@ -49,9 +52,11 @@ public class ProjectileBehaviour : MonoBehaviour
             }
             else
             {
-                if (target.tag == "Player") targetHealthScript = target.GetComponent<playerHealth>();
+                if (target.tag == "Player") targetHealthScript1 = target.GetComponent<playerHealth>();
                 else targetHealthScript = target.GetComponent<enemyHealth>();
-                targetHealthScript.Damage(damage);
+                if(target.tag=="Enemy")targetHealthScript.Damage(damage,/*daj Vector2 koji predstavlja knockback na ovog enemyja i izbrisi ovaj new vector2*/new Vector2 { });
+                else  targetHealthScript1.Damage(damage,/*daj Vector2 koji predstavlja knockback na playera i izbrisi ovaj new vector2*/new Vector2 { });
+                OnHit(target.gameObject);
                 currentPierce -= 1;
                 if (currentPierce < 0)
                 {

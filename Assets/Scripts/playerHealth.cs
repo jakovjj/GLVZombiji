@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class playerHealth : Health
+public class playerHealth : MonoBehaviour
 {
+    public GameObject thisUnit;
+    public delegate void death();
+    public death die;
     public manager mngr;
     public GameObject healthBarLocation;
     public float health;
@@ -18,9 +21,9 @@ public class playerHealth : Health
         mngr.hp += mngr.rgn * Time.deltaTime;
         if (mngr.hp > mngr.mhp) mngr.hp = mngr.mhp;
     }
-    public override void Damage(float amount)
+    public void Damage(float amount,Vector2 knockback)
     {
         amount = mngr.calcDamage(amount);
-        base.Damage(amount);
+        //dodaj sta oces da radi knockback
     }
 }

@@ -38,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
     {            
         Debug.Log("called shoot default with "+weapon);
         weapon = playerStats.equippedWeapon;
-        bullet = Instantiate(bulletPrefab.transform, firePoint.position, firePoint.rotation);
+        bullet = Instantiate(playerStats.bulletPrefabs[weapon].transform, firePoint.position, firePoint.rotation);
         Projectile bulletType = playerStats.weaponProjectile[weapon];
         bullet.GetComponent<ProjectileBehaviour>().thisProjectile = bulletType;
         bullet.GetComponent<ProjectileBehaviour>().damage = bulletType.damage;

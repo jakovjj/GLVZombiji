@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class enemyHealth : Health
+public class enemyHealth : MonoBehaviour
 {
+    public GameObject thisUnit;
+    public delegate void death();
+    public death die;
     [SerializeField] GameObject healthBar;
     public int maxHealth;
     public GameObject healthBarLocation;
@@ -28,10 +31,10 @@ public class enemyHealth : Health
         health += regen * Time.deltaTime;
         if (health > maxHealth) health = maxHealth;
     }
-    public override void Damage(float amount)
+    public void Damage(float amount,Vector2 knockback)
     {
         health -= amount;
-        base.Damage(amount);
+        //napravi knockback kak god zelis
         zombieHurt.Play();
     }
     public void destruction()

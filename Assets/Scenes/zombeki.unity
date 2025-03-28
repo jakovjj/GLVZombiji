@@ -3453,6 +3453,30 @@ PrefabInstance:
       propertyPath: coinCollect
       value: 
       objectReference: {fileID: 732618938}
+    - target: {fileID: 4764781375677257729, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764781375677257729, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764781375677257729, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764781375677257729, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764781375677257729, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764781375677257729, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5712737450091969081, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: laserSound
       value: 
