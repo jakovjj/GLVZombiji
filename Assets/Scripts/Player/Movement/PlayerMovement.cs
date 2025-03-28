@@ -8,10 +8,14 @@ public class PlayerMovement : MonoBehaviour
     public float TimeBetweenTheNextDash;
     public float dashSpeed;
     private float currentSpeed;
+
+    public manager manager;
+
     public float speed;
     [HideInInspector] public float movX;
     [HideInInspector] public float movY;
     public Rigidbody2D rg2d;
+    public BoxCollider2D playerHitbox;
     private Vector2 moveDir;
     public bool isDashing;
     public Animator animator;
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movX = 0; movY = 0;
         currentSpeed = speed;
+        manager = GameObject.Find("gameManager").GetComponent<manager>();
     }
 
     void Update()
@@ -36,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (movY < 0f) animator.SetBool("back", false);
         if (movY > 0f) animator.SetBool("back", true);
+
+
     }
 
     void ProcessInput()
@@ -51,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
         movY = Input.GetAxisRaw("Vertical");
         moveDir = new Vector2(movX, movY).normalized;
     }
-
 
     //not currently used
     IEnumerator Dash(float timeBetweenTheNextDash)

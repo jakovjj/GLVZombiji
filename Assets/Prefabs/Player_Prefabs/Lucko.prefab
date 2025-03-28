@@ -375,7 +375,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0025699139, y: -0.03434354}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -385,7 +385,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6004281, y: 2.762969}
   m_EdgeRadius: 0
 --- !u!114 &4762028515355484124
 MonoBehaviour:
@@ -401,6 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBetweenTheNextDash: 2
   dashSpeed: 100
+  manager: {fileID: 0}
   speed: 5
   movX: 0
   movY: 0
@@ -881,7 +882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9019721142835017631
 Transform:
   m_ObjectHideFlags: 0
