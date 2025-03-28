@@ -5,12 +5,16 @@ public class enemyHealth : Health
     [SerializeField] GameObject healthBar;
     public int maxHealth;
     public GameObject healthBarLocation;
+    public GameObject coinDrop;
+    [HideInInspector] public GameObject managerGO;
     public float health;
     [SerializeField] float regen;
+
     public void Awake()
     {
+        managerGO = GameObject.Find("gameManager");
         health = maxHealth;
-      die = destruction;
+        die = destruction;
         GameObject newHealthBar = GameObject.Instantiate<GameObject>(healthBar, healthBarLocation.transform);
         newHealthBar.GetComponent<HealthBar>().host = thisUnit;
     }
@@ -30,6 +34,7 @@ public class enemyHealth : Health
     }
     public void destruction()
     {
+        Instantiate(coinDrop, transform.position, Quaternion.identity, managerGO.transform);
         Destroy(thisUnit);
     }
 }

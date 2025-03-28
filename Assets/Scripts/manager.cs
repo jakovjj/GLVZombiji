@@ -12,8 +12,8 @@ public class manager : MonoBehaviour
     [HideInInspector] public float dmg;
     [HideInInspector] public int coin;
     [HideInInspector] public int equippedWeapon;
-    [HideInInspector] public int [] weaponCooldown= {1,1,1,1,1};
-     public Projectile[] weaponProjectile = { };
+    [HideInInspector] public float [] weaponCooldown = {};
+    public Projectile[] weaponProjectile = { };
 
     [HideInInspector] public int wave; 
     [HideInInspector] public int timer;
@@ -27,10 +27,12 @@ public class manager : MonoBehaviour
     private IEnumerator tickvar;
 
     void Start() {
+        equippedWeapon = 0;
         mhp = 20f; hp = mhp;
         dmg = 1f; coin = 0;
         wave = 0; timer = 30;
         tickvar = tickTimer();
+        weaponCooldown = new float[]{0.2f,0.2f,0.2f,0.2f,0.2f};
 
         newWave();
     }

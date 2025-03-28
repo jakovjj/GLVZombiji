@@ -11,12 +11,12 @@ public class PlayerAttack : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public Projectile ammoType;
-    public float gunCooldown;
+    [HideInInspector] public float gunCooldown;
     public Transform bullet;
 
   //  public nostalgia testItem;           hrcini zbagani itemi
 
-    [SerializeField] manager playerStats;
+    [HideInInspector] public manager playerStats;
 
     public Transform gunPosition;
     Vector2 mousePosition;
@@ -35,7 +35,9 @@ public class PlayerAttack : MonoBehaviour
     public playerShoot shoot;
 
     void shootDefault(int weapon)
-    {             
+    {            
+        Debug.Log("called shoot default with "+weapon);
+        weapon = playerStats.equippedWeapon;
         bullet = Instantiate(bulletPrefab.transform, firePoint.position, firePoint.rotation);
         Projectile bulletType = playerStats.weaponProjectile[weapon];
         bullet.GetComponent<ProjectileBehaviour>().thisProjectile = bulletType;
@@ -46,6 +48,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void Awake()
     {
+        playerStats = GameObject.Find("gameManager").GetComponent<manager>();
         shoot += shootDefault;
     }
     void Start()
@@ -60,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
     {
         rb.position = new Vector2(0,0);
     }
-    void Update()
+    void Update()   
     {
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetButton("Fire1") & gunCooldown<=0)
@@ -69,6 +72,7 @@ public class PlayerAttack : MonoBehaviour
         }
         cam.orthographicSize=defaultCameraSize;
         gunCooldown -= Time.deltaTime;
+        //Debug.Log(gunCooldown+"s "+playerStats.equippedWeapon);
     }
     private void FixedUpdate()
     {
