@@ -69,7 +69,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -410,6 +410,7 @@ MonoBehaviour:
   playerHitbox: {fileID: 764887318129619311}
   isDashing: 0
   animator: {fileID: 3283028224970727384}
+  coinCollect: {fileID: 0}
 --- !u!114 &5712737450091969081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +429,7 @@ MonoBehaviour:
   ammoType: {fileID: 0}
   gunCooldown: 0
   bullet: {fileID: 0}
+  laserSound: {fileID: 0}
   playerStats: {fileID: 0}
   gunPosition: {fileID: 6499031602830608130}
   cam: {fileID: 5329770645610355076}

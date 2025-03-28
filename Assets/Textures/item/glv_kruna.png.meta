@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      glv_kruna_0: 7988916704970986871
+      glv_kruna_1: 1942118857687583874
+      glv_kruna_2: -1200665125039344008
+      glv_kruna_3: -107319183742836636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

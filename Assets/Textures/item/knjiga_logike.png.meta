@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      knjiga_logike_0: 4870197220397792212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

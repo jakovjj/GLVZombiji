@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      knjiga_fizike_0: -929757165478666993
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
