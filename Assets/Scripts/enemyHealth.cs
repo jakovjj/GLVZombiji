@@ -35,11 +35,11 @@ public class enemyHealth : MonoBehaviour
     {
         health -= amount;
         //napravi knockback kak god zelis
-        zombieHurt.Play();
+   //     zombieHurt.Play();
     }
     public void destruction()
     {
-        zombieDeath.Play();
+   //     zombieDeath.Play();
         Instantiate(coinDrop, transform.position, Quaternion.identity, managerGO.transform);
         Destroy(thisUnit);
     }
