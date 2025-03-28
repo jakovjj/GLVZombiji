@@ -9,7 +9,8 @@ public class enemyHealth : Health
     [HideInInspector] public GameObject managerGO;
     public float health;
     [SerializeField] float regen;
-
+    public AudioSource zombieHurt;
+    public AudioSource zombieDeath;
     public void Awake()
     {
         managerGO = GameObject.Find("gameManager");
@@ -31,9 +32,11 @@ public class enemyHealth : Health
     {
         health -= amount;
         base.Damage(amount);
+        zombieHurt.Play();
     }
     public void destruction()
     {
+        zombieDeath.Play();
         Instantiate(coinDrop, transform.position, Quaternion.identity, managerGO.transform);
         Destroy(thisUnit);
     }
