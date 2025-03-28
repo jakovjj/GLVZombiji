@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9e890baef8d734da938aa9dfae7a9f, type: 3}
   m_Name: test
   m_EditorClassIdentifier: 
-  projectileTargets: Enemy
+  projectileTargets: Enemy Obstacle
   projectileSprite: {fileID: 1034441654749240518, guid: d14cc2ed915852c47ba3b8095d80891e, type: 3}
   damage: 10
   damageType: 0

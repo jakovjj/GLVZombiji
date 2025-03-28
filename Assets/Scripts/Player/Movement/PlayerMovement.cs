@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDir;
     public bool isDashing;
     public Animator animator;
-
+    public AudioSource coinCollect;
     void Start()
     {
         movX = 0; movY = 0;
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Coin") {
+            coinCollect.Play();
             Destroy(collision.gameObject);
             manager.coin++;
         }
