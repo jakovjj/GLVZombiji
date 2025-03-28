@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     public Projectile ammoType;
     [HideInInspector] public float gunCooldown;
     public Transform bullet;
-
+    public AudioSource laserSound;
   //  public nostalgia testItem;           hrcini zbagani itemi
 
     [HideInInspector] public manager playerStats;
@@ -43,7 +43,8 @@ public class PlayerAttack : MonoBehaviour
         bullet.GetComponent<ProjectileBehaviour>().thisProjectile = bulletType;
         bullet.GetComponent<ProjectileBehaviour>().damage = bulletType.damage;
         gunCooldown = playerStats.weaponCooldown[weapon];
-        
+        laserSound.Play();
+        //Debug.Log("play");
   //      thisGunSprite.GetComponent<SpriteRenderer>().sprite = manager.weaponSprite[weapon];
     }
     void Awake()
@@ -55,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
     {
         defaultCameraSize = cam.orthographicSize;
         waveStart();
-
+        laserSound.GetComponent<AudioSource>();
   //      testItem.Pickup();            hrcini zbagani itemi
     }
 
