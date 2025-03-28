@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
 
   //  public nostalgia testItem;           hrcini zbagani itemi
 
-    [SerializeField] manager playerStats;
+    [HideInInspector] public manager playerStats;
 
     public Transform gunPosition;
     Vector2 mousePosition;
@@ -36,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
 
     void shootDefault(int weapon)
     {            
-        //Debug.Log("called shoot default with "+weapon+" cd is "+playerStats.weaponCooldown[0]);
+        Debug.Log("called shoot default with "+weapon);
         weapon = playerStats.equippedWeapon;
         bullet = Instantiate(bulletPrefab.transform, firePoint.position, firePoint.rotation);
         Projectile bulletType = playerStats.weaponProjectile[weapon];
@@ -48,6 +48,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void Awake()
     {
+        playerStats = GameObject.Find("gameManager").GetComponent<manager>();
         shoot += shootDefault;
     }
     void Start()

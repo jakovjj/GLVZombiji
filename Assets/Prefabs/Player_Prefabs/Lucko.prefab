@@ -257,8 +257,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6499031602830608130}
+  m_Children: []
   m_Father: {fileID: 1473086306683757114}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1342648894454817296
@@ -408,7 +407,7 @@ MonoBehaviour:
   movX: 0
   movY: 0
   rg2d: {fileID: 1903703242562979852}
-  playerHitbox: {fileID: 0}
+  playerHitbox: {fileID: 764887318129619311}
   isDashing: 0
   animator: {fileID: 3283028224970727384}
 --- !u!114 &5712737450091969081
@@ -466,6 +465,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6499031602830608130}
   - {fileID: 4764781375677257729}
   - {fileID: 9019721142835017631}
   - {fileID: 6574642071128403731}
@@ -924,7 +924,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1153596201882484138}
-  m_Father: {fileID: 8701937712810788679}
+  m_Father: {fileID: 2319990338555663938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2399775175383108178
 SpriteRenderer:

@@ -12,7 +12,7 @@ public class manager : MonoBehaviour
     [HideInInspector] public float dmg;
     [HideInInspector] public int coin;
     [HideInInspector] public int equippedWeapon;
-    [HideInInspector] public float [] weaponCooldown;
+    [HideInInspector] public float [] weaponCooldown = {};
     public Projectile[] weaponProjectile = { };
 
     [HideInInspector] public int wave; 
@@ -32,7 +32,7 @@ public class manager : MonoBehaviour
         dmg = 1f; coin = 0;
         wave = 0; timer = 30;
         tickvar = tickTimer();
-        float[] weaponCooldown = {0.2f,0.2f,0.2f,0.2f,0.2f};
+        weaponCooldown = new float[]{0.2f,0.2f,0.2f,0.2f,0.2f};
 
         newWave();
     }
