@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: test
   m_EditorClassIdentifier: 
   projectileTargets: Enemy
-  projectileSprite: {fileID: 8513672953784549043, guid: 277cb7dc6d525494686ab0cfc029f5c5, type: 3}
+  projectileSprite: {fileID: 1034441654749240518, guid: d14cc2ed915852c47ba3b8095d80891e, type: 3}
   damage: 10
   damageType: 0
-  speed: 0.1
+  speed: 0.2
   projectileLifetime: 10
-  projectileSizeX: 0.3
-  projectileSizeY: 0.3
+  projectileSizeX: 0.12
+  projectileSizeY: 0.12
   projectilePierce: 0

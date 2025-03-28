@@ -1847,8 +1847,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 8563470563352130204, guid: b818aafe884080b40a281e0d8812791f, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -4854829337826818713, guid: 43f582ab0216ee84bb03626835c77158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1909,11 +1909,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1953,8 +1953,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: [{targetCorrespondingSourceObject: {fileID: 8701937712810788679, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}, insertIndex: -1, addedObject: {fileID: 1034881029}}]
-    m_AddedComponents: [{targetCorrespondingSourceObject: {fileID: 1289957269828975814, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}, insertIndex: -1, addedObject: {fileID: 918957122}}]
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8701937712810788679, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1034881029}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1289957269828975814, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 918957122}
   m_SourcePrefab: {fileID: 100100000, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
 --- !u!1 &1262868578
 GameObject:
@@ -2239,6 +2245,7 @@ MonoBehaviour:
   texthp: {fileID: 527794001}
   textwave: {fileID: 224096140}
   texttime: {fileID: 879561662}
+  textcoin: {fileID: 1599222375}
   hpbar: {fileID: 1340961017}
 --- !u!4 &1401685660
 Transform:
@@ -3595,10 +3602,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: [{targetCorrespondingSourceObject: {fileID: 8052019856681839628, guid: 0689a3473b5534347956bacbf17ca505, type: 3}, insertIndex: -1, addedObject: {fileID: 698196254}}]
-    m_AddedComponents: [{targetCorrespondingSourceObject: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}, insertIndex: -1, addedObject: {fileID: 533115431}},
-      {targetCorrespondingSourceObject: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}, insertIndex: -1, addedObject: {fileID: 533115432}},
-      {targetCorrespondingSourceObject: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}, insertIndex: -1, addedObject: {fileID: 533115437}}]
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8052019856681839628, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 698196254}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533115431}
+    - targetCorrespondingSourceObject: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533115432}
+    - targetCorrespondingSourceObject: {fileID: 6507910054846680715, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533115437}
   m_SourcePrefab: {fileID: 100100000, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
 --- !u!1001 &6149554222151466260
 PrefabInstance:
