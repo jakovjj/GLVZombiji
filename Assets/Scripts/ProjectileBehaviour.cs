@@ -48,12 +48,6 @@ public class ProjectileBehaviour : MonoBehaviour
                 if (target.tag == "Player") targetHealthScript = target.GetComponent<playerHealth>();
                 else targetHealthScript = target.GetComponent<enemyHealth>();
                 targetHealthScript.Damage(damage);
-                Rigidbody2D enemyRigidbody = target.GetComponent<Rigidbody2D>();
-                if (enemyRigidbody != null)
-                {
-                    Vector2 knockbackDirection = (target.transform.position - transform.position).normalized;
-                    enemyRigidbody.AddForce(knockbackDirection * 5, ForceMode2D.Impulse);
-                }
                 currentPierce -= 1;
                 if (currentPierce < 0)
                 {
