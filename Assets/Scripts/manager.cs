@@ -60,7 +60,7 @@ public class manager : MonoBehaviour
 
     void newWave() {
         timer = 50;
-        wave++;
+        wave = wave+1;
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
     }
