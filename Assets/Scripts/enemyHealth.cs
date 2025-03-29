@@ -16,14 +16,57 @@ public class enemyHealth : MonoBehaviour
     [SerializeField] float regen;
     public AudioSource zombieHurt;
     public AudioSource zombieDeath;
+
     public void Awake()
     {
+        flashSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        Init();
+
         managerGO = GameObject.Find("gameManager");
         health = maxHealth;
         die = destruction;
         GameObject newHealthBar = GameObject.Instantiate<GameObject>(healthBar, healthBarLocation.transform);
         newHealthBar.GetComponent<HealthBar>().host = thisUnit;
     }
+
+    #region damage Flash
+        [SerializeField] private Color flashColor = Color.white;
+        [SerializeField] private float flashTime = 0.25f;
+        private SpriteRenderer[] flashSpriteRenderers;
+        private Material[] flashMaterials;
+
+        private IEnumerator damageFlash() {
+            SetFlashColor();
+
+            float currentFlash = 0f;
+            float timerFlash = 0f;
+            while (timerFlash < flashTime) {
+                timerFlash += Time.deltaTime;
+                currentFlash = Mathf.Lerp(1f, 0f, timerFlash/flashTime);
+
+                for (int i = 0; i < flashMaterials.Length; i++) {
+                    flashMaterials[i].SetFloat("_flashVal", currentFlash);
+                }
+
+                yield return null;
+            }
+        }
+
+        private void SetFlashColor() {
+            for (int i = 0; i < flashMaterials.Length; i++) {
+                flashMaterials[i].SetColor("_flashColorWhite", flashColor);
+            }
+        }
+
+        private void Init() {
+            flashMaterials = new Material[flashSpriteRenderers.Length];
+
+            for (int i = 0; i < flashSpriteRenderers.Length; i++) {
+                flashMaterials[i] = flashSpriteRenderers[i].material;
+            }
+        }
+    #endregion
+
     void Update()
     {
         if (health <= 0)
@@ -36,6 +79,7 @@ public class enemyHealth : MonoBehaviour
     public void Damage(float amount,Vector3 dir)
     {
         health -= amount;
+        StartCoroutine(damageFlash());
         //napravi knockback kak god zelis
         gameObject.GetComponent<EnemyMove>().enabled = false;
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
