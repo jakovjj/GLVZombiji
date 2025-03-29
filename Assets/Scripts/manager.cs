@@ -11,6 +11,7 @@ public class manager : MonoBehaviour
     [HideInInspector] public float rgn;
     [HideInInspector] public float dmg;
     [HideInInspector] public int coin;
+    [HideInInspector] public bool play;
     [HideInInspector] public int equippedWeapon;
     [HideInInspector] public float[] weaponCooldown = { };
     public Projectile[] weaponProjectile = { };
@@ -18,6 +19,9 @@ public class manager : MonoBehaviour
 
     //enemy prefabs
     public GameObject zombie;
+
+    public GameObject mainUI;
+    public GameObject shopUI;
 
     [HideInInspector] public int wave;
     [HideInInspector] public int timer;
@@ -40,12 +44,11 @@ public class manager : MonoBehaviour
     
     private IEnumerator summonZombie() {
         while (timer > 0) {
-            yield return new WaitForSeconds(5);
-
             float posX = Random.Range(-14.0f, 14.0f);
             float posY = Random.Range(-14.0f, 14.0f); 
 
             Instantiate(zombie, new Vector3(posX, posY, 0f), Quaternion.identity);
+            yield return new WaitForSeconds(5);
         }
     }
 
@@ -55,10 +58,20 @@ public class manager : MonoBehaviour
             timer--;
         }
 
-        newWave(); //kasnije treba prebaciti na neki shop ili nes
+        openShop();
     }
 
-    void newWave() {
+    public void openShop() {
+        mainUI.SetActive(false);
+        shopUI.SetActive(true);
+        play = false;
+    }
+
+    public void newWave() {
+        mainUI.SetActive(true);
+        shopUI.SetActive(false);
+        play = true;
+
         timer = 50;
         wave = wave+1;
         StartCoroutine(summonZombie());

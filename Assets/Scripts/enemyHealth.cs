@@ -68,7 +68,8 @@ public class enemyHealth : MonoBehaviour
     #endregion
 
     void Update()
-    {
+    {   
+        if (managerGO.GetComponent<manager>().play == false) health = 0;
         if (health <= 0)
         {
             die();
