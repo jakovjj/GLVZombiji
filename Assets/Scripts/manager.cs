@@ -32,8 +32,10 @@ public class manager : MonoBehaviour
     public Text textcoin;
     public Text textcoinshop;
     public Slider hpbar;
+    public GameObject lucko;
 
     void Start() {
+        lucko = GameObject.Find("Lucko");
         equippedWeapon = 0;
         mhp = 20f; hp = mhp;
         dmg = 1f; coin = 0;
@@ -94,9 +96,19 @@ public class manager : MonoBehaviour
 
         return amount;
     }
-    public void getDamage(float amount)
+    public void getDamage(float amount, bool hasKnockBack, Vector2 dir)
     {
+        /*if (hasKnockBack && canTakeKnockback)
+        {
+            lucko.transform.GetChild(0).GetComponent<Rigidbody2D>().AddForce(dir * 500, ForceMode2D.Impulse);
+            canTakeKnockback = false;
+            StartCoroutine(resetKnockback(0.01f));
+        }*/
         hp -= amount;
     }
-
+   /* public IEnumerator resetKnockback(float tm)
+    {
+        yield return new WaitForSeconds(tm);
+        canTakeKnockback = true;
+    }*/
 }
