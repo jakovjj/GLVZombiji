@@ -21,7 +21,7 @@ public class playerHealth : MonoBehaviour
         mngr.hp += mngr.rgn * Time.deltaTime;
         if (mngr.hp > mngr.mhp) mngr.hp = mngr.mhp;
     }
-    public void Damage(float amount,Vector2 knockback)
+    public void Damage(float amount/*,Vector2 knockback*/)
     {
         amount = mngr.calcDamage(amount);
         //dodaj sta oces da radi knockback

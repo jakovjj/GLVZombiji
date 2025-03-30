@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 825101134059214521}
   - component: {fileID: 5397422010737168576}
   - component: {fileID: 2432820524155103901}
+  - component: {fileID: 6081504534276394002}
   m_Layer: 9
   m_Name: Zombek
   m_TagString: Enemy
@@ -394,7 +395,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   animator: {fileID: 0}
   DetectRadius: 8
-  InteractionRadius: 1
+  InteractionRadius: 0.1
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
@@ -403,6 +404,9 @@ MonoBehaviour:
     m_Bits: 128
   IdleSpeed: 3
   ChaseSpeed: 4
+  hasDetected: 0
+  isInInteractionRadius: 0
+  isInSight: 0
 --- !u!114 &2512698994748816359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +540,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.022959182, y: 0.0028698978}
   m_Radius: 1.0612118
+--- !u!114 &6081504534276394002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507910054846680715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b483735612317e4580711a54b3c2a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionParticles: {fileID: 2602407575474879348, guid: 65eba1b4f34ce5d4c9150dd28389c343, type: 3}
+  damage: 5
 --- !u!1 &9075592038696888905
 GameObject:
   m_ObjectHideFlags: 0

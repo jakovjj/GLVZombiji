@@ -17,7 +17,9 @@ public class EnemyMove : MonoBehaviour
     private int currentWaypointIndex = 0;
     public float IdleSpeed;
     public float ChaseSpeed;
-
+    public bool hasDetected;
+    public bool isInInteractionRadius;
+    public bool isInSight;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -33,11 +35,11 @@ public class EnemyMove : MonoBehaviour
     {
         if (player == null) player = GameObject.Find("Lucko").transform.GetChild(0);
 
-        bool hasDetected = Physics2D.OverlapCircle(transform.position, DetectRadius, whatIsPlayer);
+         hasDetected = Physics2D.OverlapCircle(transform.position, DetectRadius, whatIsPlayer);
         //Debug.Log(hasDetected);
-        bool isInInteractionRadius = Physics2D.OverlapCircle(transform.position, InteractionRadius, whatIsPlayer);
+         isInInteractionRadius = Physics2D.OverlapCircle(transform.position, InteractionRadius, whatIsPlayer);
         //Debug.Log(isInInteractionRadius);
-        bool isInSight = true;
+         isInSight = true;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, (player.position - transform.position).normalized, DetectRadius, obstaclesLayer | whatIsPlayer);
         if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player")) isInSight = true;
         else isInSight = false;

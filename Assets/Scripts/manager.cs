@@ -91,6 +91,12 @@ public class manager : MonoBehaviour
 
     public float calcDamage(float amount)
     {
+
         return amount;
     }
+    public void getDamage(float amount)
+    {
+        hp -= amount;
+    }
+
 }
