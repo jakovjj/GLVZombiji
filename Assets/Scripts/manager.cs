@@ -83,7 +83,7 @@ public class manager : MonoBehaviour
         texthp.text = hp.ToString()+"/"+mhp.ToString();
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
-        hpbar.value = hp*100/mhp;
+        hpbar.value = hp/mhp;
 
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();
