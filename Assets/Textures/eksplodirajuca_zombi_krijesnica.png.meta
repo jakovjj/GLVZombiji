@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 69ae214754aa8e9448781d9b3da54bbe
+guid: cc24b3559d0b95d45ab8abfedb17de9e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1567594373724201591
-    second: eksplodirajuca_zombi_krijesnica_0
+      213: 6758088799764947604
+    second: eksplodirajuca_zombi_krijesnica 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eksplodirajuca_zombi_krijesnica_0
+      name: eksplodirajuca_zombi_krijesnica 1_0
       rect:
         serializedVersion: 2
         x: 18
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 98d944af839ce3ae0800000000000000
-      internalID: -1567594373724201591
+      spriteID: 492298e15fd89cd50800000000000000
+      internalID: 6758088799764947604
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eksplodirajuca_zombi_krijesnica_0: -1567594373724201591
+      eksplodirajuca_zombi_krijesnica 1_0: 6758088799764947604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
