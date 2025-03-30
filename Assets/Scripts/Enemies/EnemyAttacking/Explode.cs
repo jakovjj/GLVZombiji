@@ -1,4 +1,3 @@
-using Unity.XR.OpenVR;
 using UnityEngine;
 
 public class Explode : MonoBehaviour
@@ -20,8 +19,8 @@ public class Explode : MonoBehaviour
         {
             Debug.Log("a");
             Instantiate(ExplosionParticles, transform.position, transform.rotation);
-            GameObject.Find("gameManager").GetComponent<manager>().getDamage(damage);
-            Destroy(gameObject);
+            GameObject.Find("gameManager").GetComponent<manager>().getDamage(damage,false,Vector2.zero);
+            Destroy(transform.parent.gameObject);
         }
     }
 }
