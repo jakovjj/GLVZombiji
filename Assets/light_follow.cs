@@ -8,7 +8,7 @@ public class light_follow : MonoBehaviour
 {
     public Transform player;
 
-    void Start() { player = GameObject.Find("Lucko/move").transform; }
+    void Start() { player = this.transform.parent; }
 
     void Update() {
         transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime*10);
