@@ -2226,8 +2226,8 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 2f744fb039d10c24f871ab11c4c1d898, type: 3}
   m_Resource: {fileID: 8300000, guid: 2f744fb039d10c24f871ab11c4c1d898, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.316
+  m_Pitch: 1.66
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2338,13 +2338,13 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a466c2d63913e4f41a8accb5b2f4e18f, type: 3}
   m_Resource: {fileID: 8300000, guid: a466c2d63913e4f41a8accb5b2f4e18f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.5
+  m_Pitch: 0.9
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 150
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4168,6 +4168,7 @@ MonoBehaviour:
   textwave: {fileID: 1719648130}
   texttime: {fileID: 1345328258}
   textcoin: {fileID: 1599222375}
+  textcoinshop: {fileID: 0}
   hpbar: {fileID: 1340961017}
 --- !u!4 &1401685660
 Transform:

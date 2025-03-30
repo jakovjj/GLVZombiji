@@ -30,6 +30,7 @@ public class manager : MonoBehaviour
     public Text textwave;
     public Text texttime;
     public Text textcoin;
+    public Text textcoinshop;
     public Slider hpbar;
 
     void Start() {
@@ -81,6 +82,7 @@ public class manager : MonoBehaviour
     void Update() {
         texthp.text = hp.ToString()+"/"+mhp.ToString();
         textcoin.text = coin.ToString();
+        textcoinshop.text = coin.ToString();
         hpbar.value = hp*100/mhp;
 
         textwave.text = "Wave "+wave.ToString();
