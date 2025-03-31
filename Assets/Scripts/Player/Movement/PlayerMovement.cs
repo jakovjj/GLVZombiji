@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (manager.play == true) ProcessInput();
-        else {movX = 0; movY = 0;}
+        else {movX = 0f; movY = 0f;}
 
         //Apliciraj micanje
         rg2d.linearVelocity = new Vector2(moveDir.x * currentSpeed, moveDir.y * currentSpeed);
@@ -52,7 +52,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void ProcessInput()
-    {
+    {   
+        if (manager.play == false) {
+            movX = 0f; movY = 0f; return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing)
         {
             StartCoroutine(Dash(TimeBetweenTheNextDash));
