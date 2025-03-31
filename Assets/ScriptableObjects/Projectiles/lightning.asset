@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b9e890baef8d734da938aa9dfae7a9f, type: 3}
-  m_Name: test
+  m_Name: lightning
   m_EditorClassIdentifier: 
   projectileTargets: Enemy Obstacle
-  projectileSprite: {fileID: 1034441654749240518, guid: d14cc2ed915852c47ba3b8095d80891e, type: 3}
+  projectileSprite: {fileID: -385344186485632085, guid: 6064370426f01684ab7aaf26f4b45b79, type: 3}
   damage: 10
   damageType: 0
   speed: 0.2
