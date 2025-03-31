@@ -41,9 +41,13 @@ public class manager : MonoBehaviour
         mhp = 20f; hp = mhp;
         dmg = 1f; coin = 0;
         wave = 0; timer = 30;
-        weaponCooldown = new float[] { 0.2f, 0.2f, 0.2f, 0.2f, 0.2f };
+        weaponCooldown = new float[] { 0.2f, 0.35f, 0.2f, 0.2f, 0.2f };
 
         newWave();
+    }
+
+    public void pickAbility(int index) {
+        equippedWeapon = index;
     }
     
     private IEnumerator summonZombie() {

@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (manager.play == true) ProcessInput();
+        else {movX = 0; movY = 0;}
 
         //Apliciraj micanje
         rg2d.linearVelocity = new Vector2(moveDir.x * currentSpeed, moveDir.y * currentSpeed);

@@ -6,6 +6,7 @@ public class ProjectileBehaviour : MonoBehaviour
 {
     public GameObject thisBullet;
     public Projectile thisProjectile;
+    public string projectileName;
     private int currentPierce;
     enemyHealth targetHealthScript;
     playerHealth targetHealthScript1;
@@ -20,8 +21,8 @@ public class ProjectileBehaviour : MonoBehaviour
     public GameObject chainLightningEffect;
     public virtual void Start()
     {
-        chainLightningEffect = Resources.Load<GameObject>("Chain_Lightning_Prefab");
-      hit = GameObject.Find("SoundManager").GetComponents<AudioSource>()[3];
+        if (projectileName == "lightning") chainLightningEffect = Resources.Load<GameObject>("Chain_Lightning_Prefab");
+        hit = GameObject.Find("SoundManager").GetComponents<AudioSource>()[3];
         self.sprite = thisProjectile.projectileSprite;
         thisBullet.transform.localScale = new Vector2(thisProjectile.projectileSizeX, thisProjectile.projectileSizeY);
         lifetime = thisProjectile.projectileLifetime;
@@ -61,7 +62,7 @@ public class ProjectileBehaviour : MonoBehaviour
                 if (target.tag == "Enemy")
                 {
                     targetHealthScript.Damage(damage, false,dir);
-                    Instantiate(chainLightningEffect,target.transform.position, Quaternion.identity);
+                    if (projectileName == "lightning") Instantiate(chainLightningEffect,target.transform.position, Quaternion.identity);
                 }
                 else targetHealthScript1.Damage(damage/*daj Vector2 koji predstavlja knockback na playera i izbrisi ovaj new vector2 Vector2 { }*/);
                 //OnHit(target.gameObject);
