@@ -80,6 +80,7 @@ public class enemyHealth : MonoBehaviour
     public void Damage(float amount,bool hasKnockback,Vector3 dir)
     {
         health -= amount;
+        gameObject.GetComponent<EnemyMove>().hasBeenHit = true;
         StartCoroutine(damageFlash());
         //napravi knockback kak god zelis
         if (hasKnockback)
