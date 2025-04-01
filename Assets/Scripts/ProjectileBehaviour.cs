@@ -61,8 +61,12 @@ public class ProjectileBehaviour : MonoBehaviour
                 else targetHealthScript = target.GetComponent<enemyHealth>();
                 if (target.tag == "Enemy")
                 {
-                    targetHealthScript.Damage(damage, false,dir);
                     if (projectileName == "lightning") Instantiate(chainLightningEffect,target.transform.position, Quaternion.identity);
+                    else
+                    {
+                        targetHealthScript.Damage(damage, true, dir);
+
+                    }
                 }
                 else targetHealthScript1.Damage(damage/*daj Vector2 koji predstavlja knockback na playera i izbrisi ovaj new vector2 Vector2 { }*/);
                 //OnHit(target.gameObject);
