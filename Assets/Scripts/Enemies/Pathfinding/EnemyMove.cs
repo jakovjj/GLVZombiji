@@ -20,6 +20,9 @@ public class EnemyMove : MonoBehaviour
     public bool hasDetected;
     public bool isInInteractionRadius;
     public bool isInSight;
+    public bool hasBeenHit;
+    public bool hasBeenHitNow;
+    private Coroutine chaseCourutine =null;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -43,21 +46,34 @@ public class EnemyMove : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, (player.position - transform.position).normalized, DetectRadius, obstaclesLayer | whatIsPlayer);
         if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player")) isInSight = true;
         else isInSight = false;
+        if (hasBeenHit)
+        {
+            deleteWaypoints();
+            agent.speed = ChaseSpeed;
+            agent.SetDestination(player.position);
+            if (chaseCourutine == null)
+            {
+                chaseCourutine=StartCoroutine(stopChase(5));
+               
+            }
+            if (hasBeenHitNow)
+            {
+                StopCoroutine(chaseCourutine);
+                chaseCourutine=null;
+                hasBeenHitNow = false;
+            }
+        }
         if (isInInteractionRadius && isInSight)
         {
+            hasBeenHit = false;
             agent.SetDestination(agent.transform.position);
         }
         else if (hasDetected && isInSight)
         {
+            hasBeenHit = false;
             deleteWaypoints();
             agent.speed = ChaseSpeed;
-            //ZA ROTIRANJE
-            /*
-            Vector3 direction = player.position - transform.position;
-            direction.Normalize();
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle); 
-            */
+
             agent.SetDestination(player.position);
 
 
@@ -66,7 +82,7 @@ public class EnemyMove : MonoBehaviour
                 // agent.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             }
         }
-        else
+        else if(!hasBeenHit)
         {
             agent.speed = IdleSpeed;
             //Transform target=null;
@@ -77,14 +93,7 @@ public class EnemyMove : MonoBehaviour
                     GotoNextPoint();
                 }
             }
-            //ZA ROTIRANJE
-            /*if (target != null)
-            {
-                Vector3 direction = target.position - transform.position;
-                direction.Normalize();
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(0, 0, angle);
-            }*/
+       
         }
     }
 
@@ -139,5 +148,6 @@ public class EnemyMove : MonoBehaviour
     IEnumerator stopChase(int time)
     {
         yield return new WaitForSeconds(time);
+        hasBeenHit = false;
     }
 }
