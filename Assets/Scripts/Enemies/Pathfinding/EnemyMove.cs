@@ -21,6 +21,8 @@ public class EnemyMove : MonoBehaviour
     public bool isInInteractionRadius;
     public bool isInSight;
     public bool hasBeenHit;
+    public bool hasBeenHitNow;
+    private Coroutine chaseCourutine =null;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -49,7 +51,17 @@ public class EnemyMove : MonoBehaviour
             deleteWaypoints();
             agent.speed = ChaseSpeed;
             agent.SetDestination(player.position);
-           // StartCoroutine(stopChase(5));
+            if (chaseCourutine == null)
+            {
+                chaseCourutine=StartCoroutine(stopChase(5));
+               
+            }
+            if (hasBeenHitNow)
+            {
+                StopCoroutine(chaseCourutine);
+                chaseCourutine=null;
+                hasBeenHitNow = false;
+            }
         }
         if (isInInteractionRadius && isInSight)
         {
