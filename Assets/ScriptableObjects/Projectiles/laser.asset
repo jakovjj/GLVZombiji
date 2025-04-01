@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileTargets: Enemy Obstacle
   projectileSprite: {fileID: 1034441654749240518, guid: d14cc2ed915852c47ba3b8095d80891e, type: 3}
-  damage: 10
+  damage: 22
   damageType: 0
   speed: 0.2
   projectileLifetime: 10

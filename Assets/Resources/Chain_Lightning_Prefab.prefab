@@ -4968,7 +4968,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
-  damage: 5
+  damage: 10
   chainLightningEffect: {fileID: 7253409604878081528}
   beenStruck: {fileID: 258032371420075364, guid: d9b9af8d1c55a954fb8b4b6bad6de26b, type: 3}
   amountToChain: 5
