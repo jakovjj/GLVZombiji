@@ -90,6 +90,7 @@ public class manager : MonoBehaviour
     }
 
     void Update() {
+        //Debug.Log(equippedWeapon);
         texthp.text = hp.ToString()+"/"+mhp.ToString();
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
