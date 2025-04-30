@@ -17720,6 +17720,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200276668}
   m_CullTransparentMesh: 1
+--- !u!1001 &1212169122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2641587
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.102531
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.053594768
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23910052981998595, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897464033049076485, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897464033049076485, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560324632923741662, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+      propertyPath: m_Name
+      value: DeathParticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
 --- !u!1 &1230248779
 GameObject:
   m_ObjectHideFlags: 0
@@ -24850,6 +24915,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1289957269828975814, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2117586795}
+    - targetCorrespondingSourceObject: {fileID: 1289957269828975814, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2117586801}
   m_SourcePrefab: {fileID: 100100000, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
 --- !u!1 &1996186012
 GameObject:
@@ -25265,6 +25333,22 @@ MonoBehaviour:
     m_Bits: 512
   damage: 30
   beamStruck: {fileID: 3752674550694175021, guid: b0b75481cc2ad5342928a098783cc33d, type: 3}
+--- !u!114 &2117586801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117586788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331fe48d5bf813e41972e2b46c300fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5817039395229815795, guid: fb793f0d199dbf5489cf21de6e62310c, type: 3}
+  spawnPoint: {fileID: 2117586789}
+  projectileSpeed: 8
+  timeBetweenShots: 0.3
 --- !u!1 &2128311148
 GameObject:
   m_ObjectHideFlags: 0
@@ -25451,3 +25535,4 @@ SceneRoots:
   - {fileID: 519190140}
   - {fileID: 2090119092}
   - {fileID: 130342266}
+  - {fileID: 1212169122}

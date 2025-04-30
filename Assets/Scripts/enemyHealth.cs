@@ -16,7 +16,7 @@ public class enemyHealth : MonoBehaviour
     [SerializeField] float regen;
     public AudioSource zombieHurt;
     public AudioSource zombieDeath;
-
+    public GameObject deathParticles;
     public void Awake()
     {
         flashSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
@@ -107,7 +107,7 @@ public class enemyHealth : MonoBehaviour
 
     public void destruction()
     {
-   //     zombieDeath.Play();
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
         Instantiate(coinDrop, transform.position, Quaternion.identity, managerGO.transform);
         Destroy(thisUnit);
     }

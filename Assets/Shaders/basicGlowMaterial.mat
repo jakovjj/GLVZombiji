@@ -42,7 +42,7 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _flashColorWhite: {r: 0.04117647, g: 0.52647686, b: 0.9811321, a: 1}
+    - _flashColorWhite: {r: 0.35564762, g: 4.5472627, b: 8.47419, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2606706341290890546
