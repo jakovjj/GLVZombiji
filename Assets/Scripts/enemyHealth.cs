@@ -109,6 +109,10 @@ public class enemyHealth : MonoBehaviour
     {
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         Instantiate(coinDrop, transform.position, Quaternion.identity, managerGO.transform);
-        Destroy(thisUnit);
+        if (gameObject.GetComponent<TrojanAttack>() != null)
+        {
+            gameObject.GetComponent<TrojanAttack>().spawnOnDeath();
+        }
+        Destroy(thisUnit.transform.parent.gameObject);
     }
 }

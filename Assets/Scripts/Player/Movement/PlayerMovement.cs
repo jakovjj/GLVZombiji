@@ -20,8 +20,10 @@ public class PlayerMovement : MonoBehaviour
     public bool isDashing;
     public Animator animator;
     public AudioSource coinCollect;
+    float speedSlowMultiplier;
     void Start()
     {
+        speedSlowMultiplier = 1;
         movX = 0; movY = 0;
         currentSpeed = speed;
         manager = GameObject.Find("gameManager").GetComponent<manager>();
@@ -29,11 +31,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(gameObject.GetComponent<IsFrozen>() != null)
+        {
+            speedSlowMultiplier=gameObject.GetComponent<IsFrozen>().freezePercentage;
+        }
+        else
+        {
+            speedSlowMultiplier = 1;
+        }
         if (manager.play == true) ProcessInput();
         else {movX = 0f; movY = 0f;}
 
         //Apliciraj micanje
-        rg2d.linearVelocity = new Vector2(moveDir.x * currentSpeed, moveDir.y * currentSpeed);
+        rg2d.linearVelocity = new Vector2(moveDir.x * currentSpeed * speedSlowMultiplier, moveDir.y * currentSpeed*speedSlowMultiplier);
 
         if (movX != 0f || movY != 0f) animator.SetBool("walk", true);
         else animator.SetBool("walk", false);
@@ -43,14 +53,13 @@ public class PlayerMovement : MonoBehaviour
         if (movY > 0f) animator.SetBool("back", true);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Coin") {
+    private void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.tag == "Coin"){
             coinCollect.Play();
             Destroy(collision.gameObject);
             manager.coin++;
         }
     }
-
     void ProcessInput()
     {   
         if (manager.play == false) {

@@ -18684,8 +18684,14 @@ MonoBehaviour:
   bulletPrefabs:
   - {fileID: 1897620257027733417, guid: f7368ebd711ea0c40b05ba0b434f7b3c, type: 3}
   - {fileID: 1897620257027733417, guid: c5f562adba0c88748851557e23982e79, type: 3}
-  zombie: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-  firefly: {fileID: 5747460456256806824, guid: 21c533807fdddd848bdca0bc3c76dc32, type: 3}
+  zombie:
+  - {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+  - {fileID: 5747460456256806824, guid: 21c533807fdddd848bdca0bc3c76dc32, type: 3}
+  - {fileID: 5053147421426312868, guid: 292bbd283e662684e983316da85732dd, type: 3}
+  - {fileID: 1238238079531067900, guid: 6eaa9c5f3a77ec24f81deb5b964e9534, type: 3}
+  - {fileID: 878691169141513837, guid: ae3777b9b59e212459f5b866403538c1, type: 3}
+  - {fileID: 9095607670232010259, guid: 64d467120a0b3ef42a07e84850324ba1, type: 3}
+  - {fileID: 6602552564613498960, guid: ecf11df74d407434595a9a39b8fbf0f1, type: 3}
   mainUI: {fileID: 1703093748}
   shopUI: {fileID: 1470116415}
   wave: 0
@@ -24820,6 +24826,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289957269828975814, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -25340,7 +25350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117586788}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 331fe48d5bf813e41972e2b46c300fd3, type: 3}
   m_Name: 

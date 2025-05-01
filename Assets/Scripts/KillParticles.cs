@@ -13,7 +13,7 @@ public class KillParticles : MonoBehaviour
 
     void Update()
     {
-        if (particles&& !particles.IsAlive())
+        if (particles && !particles.IsAlive())
         {
             Destroy(gameObject);
         }

@@ -20,7 +20,7 @@ public class EnemyMeleeAttack : MonoBehaviour
         {
             Vector2 direction= GameObject.Find("Lucko").transform.position-gameObject.transform.position;
             direction=direction.normalized;
-            GameObject.Find("gameManager").GetComponent<manager>().getDamage(damage,true,direction);
+            GameObject.Find("gameManager").GetComponent<manager>().getDamage(damage,false,direction);
             canAttack = false;
             StartCoroutine(resetAttack(timeBetweenAttack));
         }

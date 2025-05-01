@@ -18,8 +18,7 @@ public class manager : MonoBehaviour
     public GameObject[] bulletPrefabs= { };
 
     //enemy prefabs
-    public GameObject zombie;
-    public GameObject firefly;
+    public GameObject[] zombie = { };
 
     public GameObject mainUI;
     public GameObject shopUI;
@@ -55,9 +54,9 @@ public class manager : MonoBehaviour
             float posX = Random.Range(-14.0f, 14.0f);
             float posY = Random.Range(-14.0f, 14.0f); 
 
-            int rng = Random.Range(1, 3);
-            if (rng == 1) Instantiate(zombie, new Vector3(posX, posY, 0f), Quaternion.identity);
-            if (rng == 2) Instantiate(firefly, new Vector3(posX, posY, 0f), Quaternion.identity);
+            int rng = Random.Range(0, zombie.Length);
+            //Instantiate(zombie[rng-1], new Vector3(posX, posY, 0f), Quaternion.identity);
+            Instantiate(zombie[rng], new Vector3(posX, posY, 0f), Quaternion.identity);
 
             yield return new WaitForSeconds(5);
         }
