@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PoisonAttack : MonoBehaviour
 {
+    public float dmg;
     public GameObject projectilePrefab;
     public Transform spawnPoint;
     public float projectileSpeed = 1.5f;
@@ -10,7 +11,7 @@ public class PoisonAttack : MonoBehaviour
     //public float projectileSpeed;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2) 
         {
             ShootConeAttack();
         }

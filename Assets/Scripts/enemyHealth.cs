@@ -17,6 +17,9 @@ public class enemyHealth : MonoBehaviour
     public AudioSource zombieHurt;
     public AudioSource zombieDeath;
     public GameObject deathParticles;
+    public bool cantTakeKnockback;
+    public bool isWorker;
+    public float damageMultiplier;
     public void Awake()
     {
         flashSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
@@ -79,13 +82,17 @@ public class enemyHealth : MonoBehaviour
     }
     public void Damage(float amount,bool hasKnockback,Vector3 dir)
     {
-        health -= amount;
-        gameObject.GetComponent<EnemyMove>().hasBeenHit = true;
+        if (gameObject.GetComponent<WasStruckByBinaryAttack>() == null) { damageMultiplier = 1;  Debug.Log("wasnt"); }
+        else damageMultiplier = GameObject.Find("Lucko").transform.GetChild(0).GetComponent<BinaryAttack>().increasePlayerDamageBy;
+        Debug.Log("damageMultplier: "+damageMultiplier);
+        health -= amount*damageMultiplier;
+        if(!isWorker) gameObject.GetComponent<EnemyMove>().hasBeenHit = true;
         StartCoroutine(damageFlash());
         //napravi knockback kak god zelis
-        if (hasKnockback)
+        if (hasKnockback && !cantTakeKnockback)
         {
-            gameObject.GetComponent<EnemyMove>().enabled = false;
+            if(!isWorker)gameObject.GetComponent<EnemyMove>().enabled = false;
+            if(isWorker) gameObject.GetComponent<WorkerZombieMove>().enabled = false;
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 5, ForceMode2D.Impulse);
             StartCoroutine(resetForce());
@@ -101,7 +108,8 @@ public class enemyHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-        gameObject.GetComponent<EnemyMove>().enabled = true;
+        if(!isWorker)gameObject.GetComponent<EnemyMove>().enabled = true;
+        if (isWorker) gameObject.GetComponent<WorkerZombieMove>().enabled = true;
         gameObject.GetComponent<NavMeshAgent>().enabled = true;
     }
 
