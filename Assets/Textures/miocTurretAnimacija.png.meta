@@ -1,0 +1,305 @@
+fileFormatVersion: 2
+guid: d51c5162d6bc26743a45e0f9195a732e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1343830885969597196
+    second: miocTurretAnimacija_0
+  - first:
+      213: 8009061539632359406
+    second: miocTurretAnimacija_1
+  - first:
+      213: -8334852690638447801
+    second: miocTurretAnimacija_2
+  - first:
+      213: 8160622066379016167
+    second: miocTurretAnimacija_3
+  - first:
+      213: -2700609771099544864
+    second: miocTurretAnimacija_4
+  - first:
+      213: -5412605607908194691
+    second: miocTurretAnimacija_5
+  - first:
+      213: 3075126173338462642
+    second: miocTurretAnimacija_6
+  - first:
+      213: -6359094317563394993
+    second: miocTurretAnimacija_7
+  - first:
+      213: -3683327561970864007
+    second: miocTurretAnimacija_8
+  - first:
+      213: -6572939106873507002
+    second: miocTurretAnimacija_9
+  - first:
+      213: 1916356831807837561
+    second: miocTurretAnimacija_10
+  - first:
+      213: -3735357994072510064
+    second: miocTurretAnimacija_11
+  - first:
+      213: 27393308043425691
+    second: miocTurretAnimacija_12
+  - first:
+      213: 7843040509101328917
+    second: miocTurretAnimacija_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: miocTurretAnimacija_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 9
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1875f5ed834164ba55b86977795b90
+      internalID: -454375929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miocTurretAnimacija_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 10
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ceb0dfc385c10408720e8436eb8120
+      internalID: 958914222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miocTurretAnimacija_4
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 10
+        width: 142
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fcf93e3009b334495570578675b35c
+      internalID: 1625038383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miocTurretAnimacija_7
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 10
+        width: 142
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a377ff71c1631a544bfe726cb0178ad8
+      internalID: -356962767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miocTurretAnimacija_9
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 10
+        width: 143
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7dea8f23f8c59540ad9fac44171e0f2
+      internalID: -1911851159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: miocTurretAnimacija_11
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 10
+        width: 142
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e28c747938c2f41b471c64509cd886
+      internalID: -1046574500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bd4871254b1022346b4fd126ccf66664
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      miocTurretAnimacija_0: -454375929
+      miocTurretAnimacija_1: 958914222
+      miocTurretAnimacija_10: -1178869420
+      miocTurretAnimacija_11: -1046574500
+      miocTurretAnimacija_12: -85331534
+      miocTurretAnimacija_13: -878694732
+      miocTurretAnimacija_2: 1491172772
+      miocTurretAnimacija_3: 1409609882
+      miocTurretAnimacija_4: 1625038383
+      miocTurretAnimacija_5: 1508061822
+      miocTurretAnimacija_6: -1447841098
+      miocTurretAnimacija_7: -356962767
+      miocTurretAnimacija_8: 2090136953
+      miocTurretAnimacija_9: -1911851159
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

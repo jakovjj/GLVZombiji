@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class manager : MonoBehaviour
 {
     [HideInInspector] public float hp;
-    [HideInInspector] public float mhp;
+    public static float MaxPlayerHealth;
     [HideInInspector] public float rgn;
     [HideInInspector] public float dmg;
     [HideInInspector] public int coin;
@@ -37,7 +37,7 @@ public class manager : MonoBehaviour
     void Start() {
         lucko = GameObject.Find("Lucko");
         equippedWeapon = 0;
-        mhp = 20f; hp = mhp;
+        hp = MaxPlayerHealth;
         dmg = 1f; coin = 0;
         wave = 0; timer = 30;
         weaponCooldown = new float[] { 0.2f, 0.35f, 0.2f, 0.2f, 0.2f };
@@ -110,10 +110,10 @@ public class manager : MonoBehaviour
 
     void Update() {
         //Debug.Log(equippedWeapon);
-        texthp.text = hp.ToString()+"/"+mhp.ToString();
+        texthp.text = hp.ToString()+"/"+MaxPlayerHealth.ToString();
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
-        hpbar.value = hp/mhp;
+        hpbar.value = hp/MaxPlayerHealth;
 
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();

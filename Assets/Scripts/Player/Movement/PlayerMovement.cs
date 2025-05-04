@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector] public manager manager;
 
-    public float speed;
+    public static float PlayerSpeed;
     [HideInInspector] public float movX;
     [HideInInspector] public float movY;
     public Rigidbody2D rg2d;
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         speedSlowMultiplier = 1;
         movX = 0; movY = 0;
-        currentSpeed = speed;
+        currentSpeed = PlayerSpeed;
         manager = GameObject.Find("gameManager").GetComponent<manager>();
     }
 
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         else {movX = 0f; movY = 0f;}
 
         //Apliciraj micanje
-        rg2d.linearVelocity = new Vector2(moveDir.x * currentSpeed * speedSlowMultiplier, moveDir.y * currentSpeed*speedSlowMultiplier);
+        rg2d.linearVelocity = new Vector2(moveDir.x * PlayerSpeed * speedSlowMultiplier, moveDir.y * PlayerSpeed*speedSlowMultiplier);
 
         if (movX != 0f || movY != 0f) animator.SetBool("walk", true);
         else animator.SetBool("walk", false);
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         currentSpeed = dashSpeed;
         yield return new WaitForSeconds(0.1f);
-        currentSpeed = speed;
+        currentSpeed = PlayerSpeed;
         yield return new WaitForSeconds(timeBetweenTheNextDash);
         isDashing = false;
     }

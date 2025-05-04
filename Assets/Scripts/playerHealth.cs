@@ -7,10 +7,10 @@ public class playerHealth : MonoBehaviour
     public death die;
     public manager mngr;
     public GameObject healthBarLocation;
-    public float health;
+    public static float PlayerHealth;
     public void Awake()
     {
-        mngr.hp = mngr.mhp;
+      //  mngr.hp = mngr.mhp;
     }
     void Update()
     {
@@ -19,7 +19,7 @@ public class playerHealth : MonoBehaviour
             die();
         }
         mngr.hp += mngr.rgn * Time.deltaTime;
-        if (mngr.hp > mngr.mhp) mngr.hp = mngr.mhp;
+      //  if (mngr.hp > mngr.mhp) mngr.hp = mngr.mhp;
     }
     public void Damage(float amount/*,Vector2 knockback*/)
     {
