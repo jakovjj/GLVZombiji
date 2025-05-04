@@ -82,9 +82,8 @@ public class enemyHealth : MonoBehaviour
     }
     public void Damage(float amount,bool hasKnockback,Vector3 dir)
     {
-        if (gameObject.GetComponent<WasStruckByBinaryAttack>() == null) { damageMultiplier = 1;  Debug.Log("wasnt"); }
+        if (gameObject.GetComponent<WasStruckByBinaryAttack>() == null) damageMultiplier = 1;
         else damageMultiplier = GameObject.Find("Lucko").transform.GetChild(0).GetComponent<BinaryAttack>().increasePlayerDamageBy;
-        Debug.Log("damageMultplier: "+damageMultiplier);
         health -= amount*damageMultiplier;
         if(!isWorker) gameObject.GetComponent<EnemyMove>().hasBeenHit = true;
         StartCoroutine(damageFlash());

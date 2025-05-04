@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      carobniniger2_0: 8978056258676658363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

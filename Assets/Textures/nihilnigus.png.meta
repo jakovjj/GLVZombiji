@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nihilnigus_0: -3092779694170871287
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
