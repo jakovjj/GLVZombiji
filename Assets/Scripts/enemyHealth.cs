@@ -14,8 +14,6 @@ public class enemyHealth : MonoBehaviour
     [HideInInspector] public GameObject managerGO;
     public float health;
     [SerializeField] float regen;
-    //public AudioSource zombieHurt;
-    //public AudioSource zombieDeath;
     public GameObject deathParticles;
     public bool cantTakeKnockback;
     public bool isWorker;
@@ -100,7 +98,6 @@ public class enemyHealth : MonoBehaviour
        // Vector2 dir = gameObject.transform.position - hitTrigger.transform.position;
       
         
-        //     zombieHurt.Play();
     }
 
     public IEnumerator resetForce()
@@ -120,7 +117,6 @@ public class enemyHealth : MonoBehaviour
         {
             gameObject.GetComponent<TrojanAttack>().spawnOnDeath();
         }
-        //SoundManager.PlaySound(SoundEffect.ZomDeath);
         Destroy(thisUnit.transform.parent.gameObject);
     }
 }

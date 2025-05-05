@@ -15,15 +15,13 @@ public class LaserTemporary : MonoBehaviour
     public GameObject startVFX;
     public GameObject endVFX;
     private List<ParticleSystem> particles = new List<ParticleSystem>();
-    public AudioSource charge;
-    public AudioSource beam;
     public LayerMask enemyLayermask;
     public float damage;
     public GameObject beamStruck;
     private void Start()
     {
-        beam.Stop();
-        charge.Stop();
+     //   beam.Stop();
+     //   charge.Stop();
         FillList();
         for (int i = 0; i < particles.Count; i++)
         {
@@ -50,6 +48,7 @@ public class LaserTemporary : MonoBehaviour
 
     void ShootLaser()
     {
+        SoundManager.PlaySound(SoundEffect.Laser, 0.14f, 2);
         Vector3 start = gunTip.position;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = start.z;
@@ -93,7 +92,7 @@ public class LaserTemporary : MonoBehaviour
     IEnumerator DisableLaserAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        beam.Stop();
+
         lineRenderer.enabled = false;
         for (int i = 0; i < particles.Count; i++)
         {
@@ -106,9 +105,7 @@ public class LaserTemporary : MonoBehaviour
     {
         startVFX.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(delay);
-        charge.Stop();
-       // SoundManager.PlaySound(SoundEffect.Laser, 1, 2);
-        beam.Play();
+
         isShooting = true;
         lineRenderer.enabled = true;
         for (int i = 0; i < particles.Count; i++)
