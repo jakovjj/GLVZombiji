@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 1819984107727587106}
   - component: {fileID: 147783737243452992}
   - component: {fileID: 4548992147511842832}
+  - component: {fileID: 1800746497077994436}
   m_Layer: 9
   m_Name: Zombek
   m_TagString: Enemy
@@ -336,6 +337,28 @@ MonoBehaviour:
   timeBetweenAttack: 4
   spawnRadius: 1
   spawnParticles: {fileID: 6916656869927741089, guid: 708cbf6c6156a0d40ab64c8b8de4ebb5, type: 3}
+--- !u!95 &1800746497077994436
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548550781530934753}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2d010aee5e067d479ee2af6b42326a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4962822071034018172
 GameObject:
   m_ObjectHideFlags: 0
