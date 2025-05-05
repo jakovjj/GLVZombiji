@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     public Projectile ammoType;
     [HideInInspector] public float gunCooldown;
     public Transform bullet;
-    public AudioSource laserSound;
+  //  public AudioSource laserSound;
   //  public nostalgia testItem;           hrcini zbagani itemi
 
     [HideInInspector] public manager playerStats;
@@ -43,7 +43,9 @@ public class PlayerAttack : MonoBehaviour
         bullet.GetComponent<ProjectileBehaviour>().damage = bulletType.damage;
         gunCooldown = playerStats.weaponCooldown[weapon];
 
-        laserSound.Play();
+        if (weapon == 0) SoundManager.PlaySound(SoundEffect.ShootLarge, 1, 0.5);
+        if (weapon == 1) SoundManager.PlaySound(SoundEffect.ShootLarge, 1, 0.5);
+        if (weapon == 3) SoundManager.PlaySound(SoundEffect.Laser, 1, 6);
         //Debug.Log("play");
         //thisGunSprite.GetComponent<SpriteRenderer>().sprite = manager.weaponSprite[weapon];
     }
@@ -56,7 +58,8 @@ public class PlayerAttack : MonoBehaviour
     {
         defaultCameraSize = cam.orthographicSize;
         waveStart();
-        laserSound.GetComponent<AudioSource>();
+
+        //laserSound.GetComponent<AudioSource>();
         //testItem.Pickup();            hrcini zbagani itemi
     }
 

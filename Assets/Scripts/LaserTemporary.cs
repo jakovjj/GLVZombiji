@@ -37,7 +37,7 @@ public class LaserTemporary : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && lineRenderer.enabled == false && isShooting == false && isCharging==false && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon==3)
         {
             isCharging = true;
-            charge.Play();
+            SoundManager.PlaySound(SoundEffect.LaserCharge, 1 , 2);
             StartCoroutine(ChargeLaser(2));
 
         }
@@ -107,6 +107,7 @@ public class LaserTemporary : MonoBehaviour
         startVFX.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(delay);
         charge.Stop();
+       // SoundManager.PlaySound(SoundEffect.Laser, 1, 2);
         beam.Play();
         isShooting = true;
         lineRenderer.enabled = true;

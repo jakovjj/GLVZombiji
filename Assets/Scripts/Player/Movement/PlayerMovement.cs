@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDir;
     public bool isDashing;
     public Animator animator;
-    public AudioSource coinCollect;
+   // public AudioSource coinCollect;
     float speedSlowMultiplier;
     void Start()
     {
@@ -55,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.tag == "Coin"){
-            coinCollect.Play();
+            SoundManager.PlaySound(SoundEffect.CoinPickup);
+            // coinCollect.Play();
             Destroy(collision.gameObject);
             manager.coin++;
         }

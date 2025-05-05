@@ -11,7 +11,7 @@ public class ProjectileBehaviour : MonoBehaviour
     enemyHealth targetHealthScript;
     playerHealth targetHealthScript1;
     public float damage;
-    private AudioSource hit;
+    //private AudioSource hit;
     public delegate void whenIHitSomething(GameObject target);
     public whenIHitSomething OnHit;
     [SerializeField] float lifetime;
@@ -22,7 +22,7 @@ public class ProjectileBehaviour : MonoBehaviour
     public virtual void Start()
     {
         if (projectileName == "lightning") chainLightningEffect = Resources.Load<GameObject>("Chain_Lightning_Prefab");
-        hit = GameObject.Find("SoundManager").GetComponents<AudioSource>()[3];
+        //hit = GameObject.Find("SoundManager").GetComponents<AudioSource>()[3];
         self.sprite = thisProjectile.projectileSprite;
         thisBullet.transform.localScale = new Vector2(thisProjectile.projectileSizeX, thisProjectile.projectileSizeY);
         lifetime = thisProjectile.projectileLifetime;
@@ -53,7 +53,8 @@ public class ProjectileBehaviour : MonoBehaviour
         {
             if (target.tag == "Obstacle")
             {
-                hit.Play();
+                //hit.Play();
+                SoundManager.PlaySound(SoundEffect.HitMedium);
                 Destroy(thisBullet);
             }
             else

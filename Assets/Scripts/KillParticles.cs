@@ -6,8 +6,8 @@ public class KillParticles : MonoBehaviour
     private AudioSource audioSource;
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        if(audioSource != null) audioSource.Play();
+        //audioSource = GetComponent<AudioSource>();
+        //if(audioSource != null) audioSource.Play();
         particles = GetComponent<ParticleSystem>();
     }
 

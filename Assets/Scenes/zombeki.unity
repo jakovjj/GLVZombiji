@@ -5889,6 +5889,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3701889828872799165, guid: ecdee910b08241446ad414537bc0a5da, type: 3}
       insertIndex: -1
       addedObject: {fileID: 934298741}
+    - targetCorrespondingSourceObject: {fileID: 3701889828872799165, guid: ecdee910b08241446ad414537bc0a5da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 934298744}
   m_SourcePrefab: {fileID: 100100000, guid: ecdee910b08241446ad414537bc0a5da, type: 3}
 --- !u!1 &527793999
 GameObject:
@@ -7117,8 +7120,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 252682357e315a64b96cb22448932be9, type: 3}
-  m_Resource: {fileID: 8300000, guid: 252682357e315a64b96cb22448932be9, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7214,8 +7217,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5e958e44f7b96a54fa0a56067817c71e, type: 3}
-  m_Resource: {fileID: 8300000, guid: 5e958e44f7b96a54fa0a56067817c71e, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7301,6 +7304,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &934298744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320116625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e1c466adf174947ba47d897722117b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundList:
+  - {fileID: 8300000, guid: c2efbfabe7e144049829180c628068f9, type: 3}
+  - {fileID: 8300000, guid: a466c2d63913e4f41a8accb5b2f4e18f, type: 3}
+  - {fileID: 8300000, guid: 252682357e315a64b96cb22448932be9, type: 3}
+  - {fileID: 8300000, guid: 5e958e44f7b96a54fa0a56067817c71e, type: 3}
+  - {fileID: 8300000, guid: 3c5145388d0f71048b6c2fbbf065c3a2, type: 3}
+  - {fileID: 8300000, guid: 2f744fb039d10c24f871ab11c4c1d898, type: 3}
+  - {fileID: 8300000, guid: ab38088952ee58d40a1e32efc38a622b, type: 3}
+  - {fileID: 8300000, guid: 190249b4f50743549adaa7b16e1fb66b, type: 3}
+  - {fileID: 8300000, guid: bfd4bab37203b804d944d83d5e5f806b, type: 3}
 --- !u!1 &937102816
 GameObject:
   m_ObjectHideFlags: 0
@@ -24229,7 +24254,6 @@ MonoBehaviour:
   ammoType: {fileID: 0}
   gunCooldown: 0
   bullet: {fileID: 0}
-  laserSound: {fileID: 0}
   playerStats: {fileID: 1401685659}
   gunPosition: {fileID: 0}
   cam: {fileID: 0}
