@@ -9,9 +9,10 @@ public class PoisonAttack : MonoBehaviour
     public float projectileSpeed = 1.5f;
     public float timeBetweenShots = 0.7f;
     //public float projectileSpeed;
+    public FixedJoystick joystick;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2) 
+        if (joystick.Direction.magnitude>0.8f && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2) 
         {
             ShootConeAttack();
         }
@@ -23,7 +24,8 @@ public class PoisonAttack : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
 
-            Vector3 direction = (mousePosition - spawnPoint.position).normalized;
+           // Vector3 direction = (mousePosition - spawnPoint.position).normalized;
+           Vector3 direction=joystick.Direction;
         float currentProjectileSpeed = projectileSpeed;
         for (int i = 0; i < 3; i++)
         {

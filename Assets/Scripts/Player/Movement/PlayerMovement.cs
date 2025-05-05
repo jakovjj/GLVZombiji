@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public AudioSource coinCollect;
     float speedSlowMultiplier;
+
+    public FixedJoystick joystick;
     void Start()
     {
         speedSlowMultiplier = 1;
@@ -43,14 +45,15 @@ public class PlayerMovement : MonoBehaviour
         else {movX = 0f; movY = 0f;}
 
         //Apliciraj micanje
-        rg2d.linearVelocity = new Vector2(moveDir.x * PlayerSpeed * speedSlowMultiplier, moveDir.y * PlayerSpeed*speedSlowMultiplier);
+        //rg2d.linearVelocity = new Vector2(moveDir.x * PlayerSpeed * speedSlowMultiplier, moveDir.y * PlayerSpeed*speedSlowMultiplier);
+        rg2d.linearVelocity = new Vector2(joystick.Horizontal * PlayerSpeed * speedSlowMultiplier, joystick.Vertical * PlayerSpeed*speedSlowMultiplier);
 
-        if (movX != 0f || movY != 0f) animator.SetBool("walk", true);
+        if (joystick.Horizontal != 0f || joystick.Vertical != 0f) animator.SetBool("walk", true);
         else animator.SetBool("walk", false);
         //Debug.Log(movX+" "+movY);
 
-        if (movY < 0f) animator.SetBool("back", false);
-        if (movY > 0f) animator.SetBool("back", true);
+        if (joystick.Vertical < 0f) animator.SetBool("back", false);
+        if (joystick.Vertical > 0f) animator.SetBool("back", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision){

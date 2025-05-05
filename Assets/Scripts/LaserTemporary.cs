@@ -20,6 +20,7 @@ public class LaserTemporary : MonoBehaviour
     public LayerMask enemyLayermask;
     public float damage;
     public GameObject beamStruck;
+    public FixedJoystick joystick;
     private void Start()
     {
         beam.Stop();
@@ -34,7 +35,7 @@ public class LaserTemporary : MonoBehaviour
     {
         startVFX.transform.position = gunTip.position;
         //Debug.Log(gunTip.position);
-        if (Input.GetButtonDown("Fire1") && lineRenderer.enabled == false && isShooting == false && isCharging==false && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon==3)
+        if (joystick.Direction.magnitude>0.8f && lineRenderer.enabled == false && isShooting == false && isCharging==false && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon==3)
         {
             isCharging = true;
             charge.Play();
@@ -54,8 +55,8 @@ public class LaserTemporary : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = start.z;
 
-        Vector3 direction = (mousePosition - start).normalized;
-
+        //Vector3 direction = (mousePosition - start).normalized;
+        Vector3 direction = joystick.Direction;
         RaycastHit2D hit = Physics2D.Raycast(start, direction, laserRange, obstacleLayer);
         RaycastHit2D[] hits = Physics2D.RaycastAll(start, direction, laserRange, enemyLayermask);
         //Vector3 knockbackDir =  hits[0].transform.position-gunTip.transform.position;

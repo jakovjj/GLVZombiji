@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
     public delegate void playerShoot(int weapon);
     public playerShoot shoot;
-
+    public FixedJoystick joystick;
     void shootDefault(int weapon)
     {            
         weapon = playerStats.equippedWeapon;
@@ -66,8 +66,9 @@ public class PlayerAttack : MonoBehaviour
     }
     void Update()   
     {
+        Debug.Log(joystick.Direction.magnitude);
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetButton("Fire1") & gunCooldown<=0 && playerStats.play == true)
+        if (joystick.Direction.magnitude>0.8f && gunCooldown<=0 && playerStats.play == true)
         {
             shoot?.Invoke(playerStats.equippedWeapon);
         }
@@ -77,8 +78,8 @@ public class PlayerAttack : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector2 lookAt = mousePosition - (Vector2)gunPosition.position;
-
+        //Vector2 lookAt = mousePosition - (Vector2)gunPosition.position;
+        Vector2 lookAt=joystick.Direction;
         float angle = Mathf.Atan2(lookAt.y, lookAt.x) * Mathf.Rad2Deg;
         if (angle > 90 || angle < -90)
         {
