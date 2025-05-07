@@ -16,6 +16,7 @@ public class manager : MonoBehaviour
     [HideInInspector] public float[] weaponCooldown = { };
     public Projectile[] weaponProjectile = { };
     public GameObject[] bulletPrefabs= { };
+    public PlayerMovement PlayerMovement;
 
     //enemy prefabs
     public GameObject[] zombie = { };
@@ -31,11 +32,13 @@ public class manager : MonoBehaviour
     public Text texttime;
     public Text textcoin;
     public Text textcoinshop;
+    public Text wavetextshop;
     public Slider hpbar;
     public GameObject lucko;
 
     void Start() {
         lucko = GameObject.Find("Lucko");
+        PlayerMovement = lucko.transform.GetChild(0).GetComponent<PlayerMovement>();
         equippedWeapon = 0;
         hp = MaxPlayerHealth;
         dmg = 1f; coin = 0;
@@ -95,6 +98,7 @@ public class manager : MonoBehaviour
         mainUI.SetActive(false);
         shopUI.SetActive(true);
         play = false;
+        PlayerMovement.speedSlowMultiplier = 0f;
     }
 
     public void newWave() {
@@ -103,6 +107,7 @@ public class manager : MonoBehaviour
         play = true;
 
         timer = 50;
+        PlayerMovement.speedSlowMultiplier = 1f;
         wave = wave+1;
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
@@ -114,6 +119,7 @@ public class manager : MonoBehaviour
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
         hpbar.value = hp/MaxPlayerHealth;
+        wavetextshop.text = "Start Wave "+wave.ToString();
 
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();
