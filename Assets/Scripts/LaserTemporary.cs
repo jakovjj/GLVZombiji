@@ -20,6 +20,7 @@ public class LaserTemporary : MonoBehaviour
     public LayerMask enemyLayermask;
     public float damage;
     public GameObject beamStruck;
+    public LayerMask obstacleLayerMask;
     private void Start()
     {
         beam.Stop();
@@ -57,16 +58,33 @@ public class LaserTemporary : MonoBehaviour
         Vector3 direction = (mousePosition - start).normalized;
 
         RaycastHit2D hit = Physics2D.Raycast(start, direction, laserRange, obstacleLayer);
-        RaycastHit2D[] hits = Physics2D.RaycastAll(start, direction, laserRange, enemyLayermask);
-        //Vector3 knockbackDir =  hits[0].transform.position-gunTip.transform.position;
-       // knockbackDir=knockbackDir.normalized;
-        for (int i = 0; i < hits.Length; i++)
+        RaycastHit2D[] hits = Physics2D.RaycastAll(start, direction, laserRange, enemyLayermask | obstacleLayerMask);
+
+        List<RaycastHit2D> validHits = new List<RaycastHit2D>();
+
+        foreach (RaycastHit2D hit2 in hits)
         {
-            if (hits[i].collider == null) continue;
-            if (!hits[i].collider.gameObject.GetComponentInChildren<BeamStruck>())
+            if ((obstacleLayerMask & (1 << hit2.collider.gameObject.layer)) != 0)
             {
-                Instantiate(beamStruck, hits[i].collider.gameObject.transform);
-                hits[i].collider.gameObject.GetComponent<enemyHealth>().Damage(damage, false, Vector3.zero);
+                // Stop the laser when hitting an obstacle
+                break;
+            }
+
+            if ((enemyLayermask & (1 << hit2.collider.gameObject.layer)) != 0)
+            {
+                // Collect enemies that are hit before encountering an obstacle
+                validHits.Add(hit2);
+            }
+        }
+        //Vector3 knockbackDir =  hits[0].transform.position-gunTip.transform.position;
+        // knockbackDir=knockbackDir.normalized;
+        for (int i = 0; i < validHits.Count; i++)
+        {
+            if (validHits[i].collider == null) continue;
+            if (!validHits[i].collider.gameObject.GetComponentInChildren<BeamStruck>())
+            {
+                Instantiate(beamStruck, validHits[i].collider.gameObject.transform);
+                validHits[i].collider.gameObject.GetComponent<enemyHealth>().Damage(damage, false, Vector3.zero);
             }
         }
 

@@ -17,7 +17,7 @@ public class GasMove : MonoBehaviour
         transform.position += movement;
         if (speed > 0)
         {
-            Debug.Log(speed);
+            //Debug.Log(speed);
             speed -= deceleration * Time.deltaTime;
             if (speed < 0) speed = 0;
         }

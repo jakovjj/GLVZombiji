@@ -110,6 +110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 10
+  speed: 4
+  deceleration: 0.0001
+  gasColliders: {fileID: 4736364987384846942}
 --- !u!1 &5817039395229815795
 GameObject:
   m_ObjectHideFlags: 0

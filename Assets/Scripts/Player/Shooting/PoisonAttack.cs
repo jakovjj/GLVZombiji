@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PoisonAttack : MonoBehaviour
 {
-    public float dmg;
+    public static float playerPoisonDmg=10f;
     public GameObject projectilePrefab;
     public Transform spawnPoint;
     public float projectileSpeed = 1.5f;
