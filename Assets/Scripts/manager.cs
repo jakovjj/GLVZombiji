@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class manager : MonoBehaviour
 {
     [HideInInspector] public float hp;
-    [HideInInspector] public float mhp;
+    public static float MaxPlayerHealth;
     [HideInInspector] public float rgn;
     [HideInInspector] public float dmg;
     [HideInInspector] public int coin;
@@ -18,8 +18,7 @@ public class manager : MonoBehaviour
     public GameObject[] bulletPrefabs= { };
 
     //enemy prefabs
-    public GameObject zombie;
-    public GameObject firefly;
+    public GameObject[] zombie = { };
 
     public GameObject mainUI;
     public GameObject shopUI;
@@ -38,7 +37,7 @@ public class manager : MonoBehaviour
     void Start() {
         lucko = GameObject.Find("Lucko");
         equippedWeapon = 0;
-        mhp = 20f; hp = mhp;
+        hp = MaxPlayerHealth;
         dmg = 1f; coin = 0;
         wave = 0; timer = 30;
         weaponCooldown = new float[] { 0.2f, 0.35f, 0.2f, 0.2f, 0.2f };
@@ -55,9 +54,29 @@ public class manager : MonoBehaviour
             float posX = Random.Range(-14.0f, 14.0f);
             float posY = Random.Range(-14.0f, 14.0f); 
 
-            int rng = Random.Range(1, 3);
-            if (rng == 1) Instantiate(zombie, new Vector3(posX, posY, 0f), Quaternion.identity);
-            if (rng == 2) Instantiate(firefly, new Vector3(posX, posY, 0f), Quaternion.identity);
+            int rng = Random.Range(0, zombie.Length);
+            //Instantiate(zombie[rng-1], new Vector3(posX, posY, 0f), Quaternion.identity);
+            if (rng == 7)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    float xOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
+                    float yOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
+                    Vector3 cur=new Vector3(posX, posY, 0f);
+                    Vector3 spawnPosition = cur+  new Vector3(xOffset, yOffset, 0);
+                    if (spawnPosition.y < -14|| spawnPosition.y > 14 || spawnPosition.x < -14 || spawnPosition.x > 14)
+                    {
+                        i--;
+                        continue;
+                    }
+                    Instantiate(zombie[rng], spawnPosition, Quaternion.identity);
+                }
+            }
+            else
+            {
+                Instantiate(zombie[rng], new Vector3(posX, posY, 0f), Quaternion.identity);
+            }
+            
 
             yield return new WaitForSeconds(5);
         }
@@ -90,10 +109,11 @@ public class manager : MonoBehaviour
     }
 
     void Update() {
-        texthp.text = hp.ToString()+"/"+mhp.ToString();
+        //Debug.Log(equippedWeapon);
+        texthp.text = hp.ToString()+"/"+MaxPlayerHealth.ToString();
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
-        hpbar.value = hp/mhp;
+        hpbar.value = hp/MaxPlayerHealth;
 
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();

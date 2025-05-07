@@ -48,6 +48,7 @@ public class ProjectileBehaviour : MonoBehaviour
  
     void OnTriggerEnter2D(Collider2D target)
     {
+        ///Debug.Log(target.tag);
         if (thisProjectile.projectileTargets.Contains(target.tag))
         {
             if (target.tag == "Obstacle")
@@ -61,14 +62,24 @@ public class ProjectileBehaviour : MonoBehaviour
                 else targetHealthScript = target.GetComponent<enemyHealth>();
                 if (target.tag == "Enemy")
                 {
-                    
-                    if (projectileName == "lightning"){
-			Instantiate(chainLightningEffect,target.transform.position, Quaternion.identity);
-                	}else{
-			targetHealthScript.Damage(damage, true,dir);
-			}
-		}
-                else targetHealthScript1.Damage(damage/*daj Vector2 koji predstavlja knockback na playera i izbrisi ovaj new vector2 Vector2 { }*/);
+
+                    if (projectileName == "lightning")
+                    {
+                        Instantiate(chainLightningEffect, target.transform.position, Quaternion.identity);
+                    }
+                    else
+                    {
+                        targetHealthScript.Damage(damage, true, dir);
+                    }
+                }
+                else if (target.tag == "Player")
+                {
+                    if (projectileName == "Freeze") gameObject.GetComponent<FreezeAttack>().Freeze(target.gameObject);
+                    if (projectileName == "Poison") gameObject.GetComponent<EnemyPoisonAttack>().Poison(target.gameObject);
+                    GameObject.Find("gameManager").GetComponent<manager>().getDamage(damage, false, dir);
+                    Destroy(thisBullet);
+                    //targetHealthScript1.Damage(damage);
+                }
                 //OnHit(target.gameObject);
                 currentPierce -= 1;
                 if (currentPierce < 0)

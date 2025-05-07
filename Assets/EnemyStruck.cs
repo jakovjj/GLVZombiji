@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class EnemyStruck : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -7,4 +6,5 @@ public class EnemyStruck : MonoBehaviour
     {
         Destroy(gameObject, 0.4f);   
     }
+
 }

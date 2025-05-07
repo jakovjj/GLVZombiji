@@ -7,13 +7,13 @@ public class KillParticles : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.Play();
+        if(audioSource != null) audioSource.Play();
         particles = GetComponent<ParticleSystem>();
     }
 
     void Update()
     {
-        if (particles&& !particles.IsAlive())
+        if (particles && !particles.IsAlive())
         {
             Destroy(gameObject);
         }
