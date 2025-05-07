@@ -22,6 +22,7 @@ public class LaserTemporary : MonoBehaviour
     public float damage;
     public GameObject beamStruck;
     public LayerMask obstacleLayerMask;
+    public static bool isLaserOn=false;
     private void Start()
     {
         beam.Stop();
@@ -34,12 +35,14 @@ public class LaserTemporary : MonoBehaviour
     }
     void Update()
     {
+
         //Debug.Log(EventSystem.current.IsPointerOverGameObject());
         startVFX.transform.position = gunTip.position;
         //Debug.Log(gunTip.position);
         if (Input.GetButtonDown("Fire1") && lineRenderer.enabled == false && isShooting == false && isCharging==false && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon==3 && EventSystem.current.IsPointerOverGameObject()==false)
         {
             isCharging = true;
+            isLaserOn = true;
             charge.Play();
             StartCoroutine(ChargeLaser(2));
 
@@ -120,6 +123,7 @@ public class LaserTemporary : MonoBehaviour
             particles[i].Stop();
         }
         isShooting = false;
+        isLaserOn = false;
         isCharging = false;
     }
     IEnumerator ChargeLaser(float delay)
@@ -129,6 +133,7 @@ public class LaserTemporary : MonoBehaviour
         charge.Stop();
         beam.Play();
         isShooting = true;
+        isLaserOn=true;
         lineRenderer.enabled = true;
         for (int i = 0; i < particles.Count; i++)
         {

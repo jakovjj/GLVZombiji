@@ -46,7 +46,7 @@ public class manager : MonoBehaviour
     }
 
     public void pickAbility(int index) {
-        equippedWeapon = index;
+       if(LaserTemporary.isLaserOn==false) equippedWeapon = index;
     }
     
     private IEnumerator summonZombie() {
