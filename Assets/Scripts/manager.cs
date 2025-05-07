@@ -18,7 +18,9 @@ public class manager : MonoBehaviour
     public GameObject[] bulletPrefabs= { };
 
     //enemy prefabs
-    public GameObject[] zombie = { };
+
+    public zombieSpawn[] zombie = { };
+    public zombieSpawn[][] waves = {  };
 
     public GameObject mainUI;
     public GameObject shopUI;
@@ -56,29 +58,22 @@ public class manager : MonoBehaviour
 
             int rng = Random.Range(0, zombie.Length);
             //Instantiate(zombie[rng-1], new Vector3(posX, posY, 0f), Quaternion.identity);
-            if (rng == 7)
+            for (int i = 0; i < zombie[rng].cnt; i++)
             {
-                for (int i = 0; i < 8; i++)
+                float xOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
+                float yOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
+                Vector3 cur=new Vector3(posX, posY, 0f);
+                Vector3 spawnPosition = cur+  new Vector3(xOffset, yOffset, 0);
+                if (spawnPosition.y < -14|| spawnPosition.y > 14 || spawnPosition.x < -14 || spawnPosition.x > 14)
                 {
-                    float xOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
-                    float yOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
-                    Vector3 cur=new Vector3(posX, posY, 0f);
-                    Vector3 spawnPosition = cur+  new Vector3(xOffset, yOffset, 0);
-                    if (spawnPosition.y < -14|| spawnPosition.y > 14 || spawnPosition.x < -14 || spawnPosition.x > 14)
-                    {
-                        i--;
-                        continue;
-                    }
-                    Instantiate(zombie[rng], spawnPosition, Quaternion.identity);
+                    i--;
+                    continue;
                 }
-            }
-            else
-            {
-                Instantiate(zombie[rng], new Vector3(posX, posY, 0f), Quaternion.identity);
+                Instantiate(zombie[rng].zombieType, spawnPosition, Quaternion.identity);
             }
             
 
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(zombie[rng].downtime);
         }
     }
 
@@ -104,6 +99,7 @@ public class manager : MonoBehaviour
 
         timer = 50;
         wave = wave+1;
+        zombie = waves[wave];
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
     }
