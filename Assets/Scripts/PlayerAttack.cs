@@ -67,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()   
     {
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetButton("Fire1") & gunCooldown<=0 && playerStats.play == true)
+        if (Input.GetButton("Fire1") & gunCooldown<=0 && playerStats.play == true && playerStats.equippedWeapon<=1)
         {
             shoot?.Invoke(playerStats.equippedWeapon);
         }
