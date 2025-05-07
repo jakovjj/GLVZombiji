@@ -94,7 +94,7 @@ public class LaserTemporary : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Debug.Log(hit.point);
+            //Debug.Log(hit.point);
             lineRenderer.SetPosition(0, start);
             lineRenderer.SetPosition(1, hit.point);
         }
