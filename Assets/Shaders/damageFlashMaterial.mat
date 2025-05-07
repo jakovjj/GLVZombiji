@@ -41,8 +41,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _flashBinaryVal: 0
     - _flashVal: 0
     m_Colors:
+    - _flashColorBinary: {r: 1, g: 0, b: 0.9675421, a: 1}
     - _flashColorWhite: {r: 2.2203298, g: 2.2203298, b: 2.2203298, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

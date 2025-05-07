@@ -22,23 +22,15 @@ public class WasStruckByBinaryAttack : MonoBehaviour
 
     private IEnumerator damageFlash()
     {
-        
         SetFlashColor();
-
         float currentFlash = 0f;
         float timerFlash = 0f;
         
         while (timerFlash < flashTime)
         {
-           // Debug.Log(timerFlash);
-
             timerFlash += Time.deltaTime;
-            currentFlash = Mathf.Lerp(1f, 0f, timerFlash / flashTime);
-
-            for (int i = 0; i < flashMaterials.Length; i++)
-            {
-                flashMaterials[i].SetFloat("_flashVal", currentFlash);
-            }
+            currentFlash = Mathf.Lerp(0f, 1f, timerFlash / flashTime);
+            for (int i = 0; i < flashMaterials.Length; i++) flashMaterials[i].SetFloat("_flashBinaryVal", currentFlash);
 
             yield return null;
         }
@@ -48,7 +40,7 @@ public class WasStruckByBinaryAttack : MonoBehaviour
     {
         for (int i = 0; i < flashMaterials.Length; i++)
         {
-            flashMaterials[i].SetColor("_flashColorWhite", flashColor);
+            flashMaterials[i].SetColor("_flashColorBinary", flashColor);
         }
     }
 
@@ -61,6 +53,7 @@ public class WasStruckByBinaryAttack : MonoBehaviour
             flashMaterials[i] = flashSpriteRenderers[i].material;
         }
     }
+
     #endregion
     // Update is called once per frame
     void Update()

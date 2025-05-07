@@ -10,7 +10,7 @@ public class playerHealth : MonoBehaviour
     public static float PlayerHealth;
     public void Awake()
     {
-      //  mngr.hp = mngr.mhp;
+      //mngr.hp = mngr.mhp;
     }
     void Update()
     {
