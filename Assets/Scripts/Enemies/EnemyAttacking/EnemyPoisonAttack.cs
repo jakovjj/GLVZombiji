@@ -7,7 +7,6 @@ public class EnemyPoisonAttack : MonoBehaviour
     public void Poison(GameObject player)
     {
         IsPoisoned existingComponent = player.GetComponent<IsPoisoned>();
-        Debug.Log("AUUUUU");
         if (existingComponent == null)
         {
             // If the component does not exist, add a new one

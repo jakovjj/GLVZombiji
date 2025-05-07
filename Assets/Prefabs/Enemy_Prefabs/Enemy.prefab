@@ -431,6 +431,9 @@ MonoBehaviour:
   zombieHurt: {fileID: 0}
   zombieDeath: {fileID: 0}
   deathParticles: {fileID: 5560324632923741662, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+  cantTakeKnockback: 0
+  isWorker: 0
+  damageMultiplier: 0
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.25
 --- !u!61 &825101134059214521

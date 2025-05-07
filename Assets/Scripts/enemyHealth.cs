@@ -30,6 +30,10 @@ public class enemyHealth : MonoBehaviour
         die = destruction;
         GameObject newHealthBar = GameObject.Instantiate<GameObject>(healthBar, healthBarLocation.transform);
         newHealthBar.GetComponent<HealthBar>().host = thisUnit;
+
+        for (int i = 0; i < flashMaterials.Length; i++) {
+            flashMaterials[i].SetFloat("_flashBinaryVal", 1f);
+        }
     }
 
     #region damage Flash
