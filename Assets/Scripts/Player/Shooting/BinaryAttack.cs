@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BinaryAttack : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class BinaryAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 4) // Left mouse button
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 4 && EventSystem.current.IsPointerOverGameObject() == false) // Left mouse button
         {
             ShootProjectile();
         }

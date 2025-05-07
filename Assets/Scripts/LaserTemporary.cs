@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Rendering;
 using static UnityEngine.ParticleSystem;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class LaserTemporary : MonoBehaviour
 {
@@ -33,9 +34,10 @@ public class LaserTemporary : MonoBehaviour
     }
     void Update()
     {
+        //Debug.Log(EventSystem.current.IsPointerOverGameObject());
         startVFX.transform.position = gunTip.position;
         //Debug.Log(gunTip.position);
-        if (Input.GetButtonDown("Fire1") && lineRenderer.enabled == false && isShooting == false && isCharging==false && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon==3)
+        if (Input.GetButtonDown("Fire1") && lineRenderer.enabled == false && isShooting == false && isCharging==false && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon==3 && EventSystem.current.IsPointerOverGameObject()==false)
         {
             isCharging = true;
             charge.Play();

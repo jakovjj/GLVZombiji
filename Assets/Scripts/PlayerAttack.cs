@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity;
+using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()   
     {
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetButton("Fire1") & gunCooldown<=0 && playerStats.play == true && playerStats.equippedWeapon<=1)
+        if (Input.GetButton("Fire1") & gunCooldown<=0 && playerStats.play == true && playerStats.equippedWeapon<=1 && EventSystem.current.IsPointerOverGameObject() == false)
         {
             shoot?.Invoke(playerStats.equippedWeapon);
         }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class PoisonAttack : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PoisonAttack : MonoBehaviour
     //public float projectileSpeed;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2) 
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2 && EventSystem.current.IsPointerOverGameObject() == false) 
         {
             ShootConeAttack();
         }
