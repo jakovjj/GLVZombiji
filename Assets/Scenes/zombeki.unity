@@ -18418,16 +18418,31 @@ MonoBehaviour:
   - {fileID: 1897620257027733417, guid: f7368ebd711ea0c40b05ba0b434f7b3c, type: 3}
   - {fileID: 1897620257027733417, guid: c5f562adba0c88748851557e23982e79, type: 3}
   zombie:
-  - {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
-  - {fileID: 5747460456256806824, guid: 21c533807fdddd848bdca0bc3c76dc32, type: 3}
-  - {fileID: 5053147421426312868, guid: 292bbd283e662684e983316da85732dd, type: 3}
-  - {fileID: 1238238079531067900, guid: 6eaa9c5f3a77ec24f81deb5b964e9534, type: 3}
-  - {fileID: 878691169141513837, guid: ae3777b9b59e212459f5b866403538c1, type: 3}
-  - {fileID: 9095607670232010259, guid: 64d467120a0b3ef42a07e84850324ba1, type: 3}
-  - {fileID: 6602552564613498960, guid: ecf11df74d407434595a9a39b8fbf0f1, type: 3}
-  - {fileID: 1921437808125921945, guid: 4f77cfca326342c40aa8dead9922b961, type: 3}
-  - {fileID: 8372928413247883119, guid: 217709ce4f78127478f334a2e557eb5d, type: 3}
-  - {fileID: 8993627365803142810, guid: 3480b88a573e1e44abddf746b5b0320c, type: 3}
+  - {fileID: 11400000, guid: 6c61e59ffc1cdd143b357b68f571b7b9, type: 2}
+  wave1:
+  - {fileID: 11400000, guid: 6c61e59ffc1cdd143b357b68f571b7b9, type: 2}
+  wave2:
+  - {fileID: 11400000, guid: d56c444b241e8f84080785e8230f838c, type: 2}
+  wave3:
+  - {fileID: 11400000, guid: 0103cf06c9bbfc3459b31c2fac1ab0d7, type: 2}
+  - {fileID: 11400000, guid: 3ab1f5912946cfc4ca2e433908e0b8ed, type: 2}
+  - {fileID: 11400000, guid: 14f278d92d13918478f69cc65b7ec1fa, type: 2}
+  wave4:
+  - {fileID: 11400000, guid: eb7387b52567bf747948a031b6756ff7, type: 2}
+  - {fileID: 11400000, guid: 9dd5f06724df08546bf4fb5d9ee7e235, type: 2}
+  - {fileID: 11400000, guid: 7ebefcd5561c50f4c900d08ce21b8cd1, type: 2}
+  - {fileID: 11400000, guid: b30e80c121790604c8d8ed6338d894b8, type: 2}
+  wave5: []
+  wave6: []
+  wave7: []
+  wave8: []
+  wave9: []
+  wave10: []
+  wave11: []
+  wave12: []
+  wave13: []
+  wave14: []
+  wave15: []
   mainUI: {fileID: 1703093748}
   shopUI: {fileID: 1470116415}
   wave: 0
