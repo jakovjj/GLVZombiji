@@ -35,7 +35,7 @@ public class LaserTemporary : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && lineRenderer.enabled == false && isShooting == false && isCharging==false && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon==3)
         {
             isCharging = true;
-            SoundManager.PlaySound(SoundEffect.LaserCharge, 1 , 2);
+            SoundManager.PlaySound(SoundEffect.LaserCharge, 0.8f , 2);
             StartCoroutine(ChargeLaser(2));
 
         }
@@ -48,7 +48,7 @@ public class LaserTemporary : MonoBehaviour
 
     void ShootLaser()
     {
-        SoundManager.PlaySound(SoundEffect.LaserTest, 0.06f, 2);
+        SoundManager.PlaySound(SoundEffect.LaserTest, 0.04f, 2);
         Vector3 start = gunTip.position;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = start.z;

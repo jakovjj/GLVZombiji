@@ -36,13 +36,11 @@ public class SoundManager : MonoBehaviour
     private AudioSource GetFreeAudioSource()
     {
         AudioSource freeSource = audioSources.Find(a => !a.isPlaying);
-
-        if (freeSource == null) // No available source? Create a new one
+        if (freeSource == null)
         {
             freeSource = gameObject.AddComponent<AudioSource>();
             audioSources.Add(freeSource);
         }
-
         return freeSource;
     }
     public static void PlaySound(SoundEffect sound, float volume = 1, double duration = 1)
@@ -58,7 +56,7 @@ public class SoundManager : MonoBehaviour
 
         if (duration > 0)
         {
-            instance.StartCoroutine(instance.StopSoundAfterDuration(freeSource, duration));
+           instance.StartCoroutine(instance.StopSoundAfterDuration(freeSource, duration));
         }
     }
     private IEnumerator StopSoundAfterDuration(AudioSource source, double duration)
