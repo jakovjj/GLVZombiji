@@ -14,7 +14,8 @@ public enum SoundEffect
     Tomato,
     ZomDeath,
     ZomHurt,
-    SonicBoom
+    SonicBoom,
+    BinaryThing2
 }
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
@@ -27,12 +28,12 @@ public class SoundManager : MonoBehaviour
     {
         instance = this;
         //if (instance == null) instance = this;
-       // else Debug.LogError("Multiple SoundManager instances detected!");
+        // else Debug.LogError("Multiple SoundManager instances detected!");
     }
 
     private void Start()
     {
-        for (int i = 0; i < 9; i++) 
+        for (int i = 0; i < 11; i++)
         {
             AudioSource src = gameObject.AddComponent<AudioSource>();
             audioSources.Add(src);
@@ -56,9 +57,6 @@ public class SoundManager : MonoBehaviour
             instance.StartCoroutine(instance.StopSoundAfterDuration(freeSource, duration));
         }
     }
-
-
-
     private IEnumerator StopSoundAfterDuration(AudioSource source, double duration)
     {
         yield return new WaitForSeconds((float)duration);
