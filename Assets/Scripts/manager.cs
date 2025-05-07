@@ -21,7 +21,21 @@ public class manager : MonoBehaviour
     //enemy prefabs
 
     public zombieSpawn[] zombie = { };
-    public zombieSpawn[][] waves = {  };
+    public zombieSpawn[] wave1 = { };
+    public  zombieSpawn[] wave2 = { };
+    [SerializeField] zombieSpawn[] wave3 = { };
+    [SerializeField] zombieSpawn[] wave4 = { };
+    [SerializeField] zombieSpawn[] wave5 = { };
+    [SerializeField] zombieSpawn[] wave6 = { };
+    [SerializeField] zombieSpawn[] wave7 = { };
+    [SerializeField] zombieSpawn[] wave8 = { };
+    [SerializeField] zombieSpawn[] wave9 = { };
+    [SerializeField] zombieSpawn[] wave10= { };
+    [SerializeField] zombieSpawn[] wave11= { };
+    [SerializeField] zombieSpawn[] wave12 = { };
+    [SerializeField] zombieSpawn[] wave13 = { };
+    [SerializeField] zombieSpawn[] wave14 = { };
+    [SerializeField] zombieSpawn[] wave15 = { };
 
     public GameObject mainUI;
     public GameObject shopUI;
@@ -104,7 +118,21 @@ public class manager : MonoBehaviour
         timer = 50;
         PlayerMovement.speedSlowMultiplier = 1f;
         wave = wave+1;
-        zombie = waves[wave];
+        if (wave == 1) zombie = wave1;
+        else if (wave == 2) zombie = wave2;
+        else if (wave == 3) zombie = wave3;
+        else if (wave == 4) zombie = wave4;
+        else if (wave == 5) zombie = wave5;
+        else if (wave == 6) zombie = wave6;
+        else if (wave == 7) zombie = wave7;
+        else if (wave == 8) zombie = wave8;
+        else if (wave == 9) zombie = wave9;
+        else if (wave == 10) zombie = wave10;
+        else if (wave == 11) zombie = wave11;
+        else if (wave == 12) zombie = wave12;
+        else if (wave == 13) zombie = wave13;
+        else if (wave == 14) zombie = wave14;
+        else zombie = wave15;
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
     }
