@@ -48,7 +48,7 @@ public class LaserTemporary : MonoBehaviour
 
     void ShootLaser()
     {
-        SoundManager.PlaySound(SoundEffect.Laser, 0.14f, 2);
+        SoundManager.PlaySound(SoundEffect.LaserTest, 0.06f, 2);
         Vector3 start = gunTip.position;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = start.z;

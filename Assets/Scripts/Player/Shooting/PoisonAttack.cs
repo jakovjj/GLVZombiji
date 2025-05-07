@@ -19,7 +19,7 @@ public class PoisonAttack : MonoBehaviour
 
     void ShootConeAttack()
     {
-        
+        SoundManager.PlaySound(SoundEffect.GasAttack, 1, 0.33);
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
 

@@ -15,7 +15,9 @@ public enum SoundEffect
     ZomDeath,
     ZomHurt,
     SonicBoom,
-    BinaryThing2
+    BinaryThing2,
+    LaserTest,
+    GasAttack
 }
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
@@ -31,21 +33,23 @@ public class SoundManager : MonoBehaviour
         // else Debug.LogError("Multiple SoundManager instances detected!");
     }
 
-    private void Start()
+    private AudioSource GetFreeAudioSource()
     {
-        for (int i = 0; i < 11; i++)
+        AudioSource freeSource = audioSources.Find(a => !a.isPlaying);
+
+        if (freeSource == null) // No available source? Create a new one
         {
-            AudioSource src = gameObject.AddComponent<AudioSource>();
-            audioSources.Add(src);
+            freeSource = gameObject.AddComponent<AudioSource>();
+            audioSources.Add(freeSource);
         }
-        //Debug.Log($"SoundList Initialized: {(soundList != null ? "Yes" : "No")}, Length: {soundList?.Length}");
-        //Debug.Log($"AudioSource Count: {audioSources.Count}");
+
+        return freeSource;
     }
     public static void PlaySound(SoundEffect sound, float volume = 1, double duration = 1)
     {
         if (instance == null || instance.audioSources == null) return;
 
-        AudioSource freeSource = instance.audioSources.Find(a => !a.isPlaying);
+        AudioSource freeSource = instance.GetFreeAudioSource();
         if (freeSource == null) return;
 
         freeSource.clip = instance.soundList[(int)sound];

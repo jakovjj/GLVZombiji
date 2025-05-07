@@ -85,6 +85,7 @@ public class enemyHealth : MonoBehaviour
         health -= amount*damageMultiplier;
         if(!isWorker) gameObject.GetComponent<EnemyMove>().hasBeenHit = true;
         StartCoroutine(damageFlash());
+        SoundManager.PlaySound(SoundEffect.ZomHurt, 1, 0.33);
         //napravi knockback kak god zelis
         if (hasKnockback && !cantTakeKnockback)
         {

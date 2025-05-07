@@ -51,7 +51,7 @@ public class ProjectileBehaviour : MonoBehaviour
         {
             if (target.tag == "Obstacle")
             {
-                SoundManager.PlaySound(SoundEffect.HitMedium, 0.5f, 0.5);
+                SoundManager.PlaySound(SoundEffect.HitMedium, 0.2f, 0.5);
                 Destroy(thisBullet);
             }
             else

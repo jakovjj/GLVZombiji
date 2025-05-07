@@ -42,8 +42,8 @@ public class PlayerAttack : MonoBehaviour
         bullet.GetComponent<ProjectileBehaviour>().damage = bulletType.damage;
         gunCooldown = playerStats.weaponCooldown[weapon];
 
-        if (weapon == 0) SoundManager.PlaySound(SoundEffect.ShootLarge, 1, 0.4);
-        if (weapon == 1) SoundManager.PlaySound(SoundEffect.ShootLarge, 0.5f, 0.5);
+        if (weapon == 0) SoundManager.PlaySound(SoundEffect.ShootLarge, 0.3f, 0.4);
+        if (weapon == 1) SoundManager.PlaySound(SoundEffect.ShootLarge, 0.3f, 0.4);
         //Debug.Log("play");
         //thisGunSprite.GetComponent<SpriteRenderer>().sprite = manager.weaponSprite[weapon];
     }
