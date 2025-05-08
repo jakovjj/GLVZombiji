@@ -22,15 +22,20 @@ public class Item : MonoBehaviour
     }
 
 
-    public void i_burek() {manager.MaxPlayerHealth += 10;}
-    public void i_forneti() {manager.MaxPlayerHealth += 10;}
-    public void i_mathbook() {manager.MaxPlayerHealth += 10;}
-    public void i_physicsbook() {manager.MaxPlayerHealth += 10;}
-    public void i_biobook() {manager.MaxPlayerHealth += 10;}
-    public void i_logicbook() {manager.MaxPlayerHealth += 10;}
-    public void i_informaticsbook() {manager.MaxPlayerHealth += 10;}
-    public void i_shoes() {manager.MaxPlayerHealth += 10;}
-    public void i_coffee() {manager.MaxPlayerHealth += 10;}
-    public void i_glvcrown() {manager.MaxPlayerHealth += 10;}
-    public void i_pendulum() {manager.MaxPlayerHealth += 10;}
+    public void i_burek() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_forneti() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_mathbook() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_physicsbook() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_biobook() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_logicbook() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_informaticsbook() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_shoes() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_coffee() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_glvcrown() {manager.MaxPlayerHealth += 10; buyItem();}
+    public void i_pendulum() {manager.MaxPlayerHealth += 10; buyItem();}
+
+    public void buyItem() {
+        manager.coin -= price;
+        manager.shopShuffle();
+    }
 }
