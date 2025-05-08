@@ -21181,6 +21181,7 @@ MonoBehaviour:
   shopUI: {fileID: 1470116415}
   pauseUI: {fileID: 0}
   gameOverUI: {fileID: 690665642}
+  immortal: 0
   wave: 0
   timer: 0
   texthp: {fileID: 527794001}
@@ -21655,7 +21656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1470116416
 RectTransform:
   m_ObjectHideFlags: 0

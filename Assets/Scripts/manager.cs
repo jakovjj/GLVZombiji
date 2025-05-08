@@ -56,7 +56,7 @@ public class manager : MonoBehaviour
 
     void Start() {
         lucko = GameObject.Find("Lucko");
-        MaxPlayerHealth = 20; hp = 20;
+        MaxPlayerHealth = 50;
         PlayerMovement = lucko.transform.GetChild(0).GetComponent<PlayerMovement>();
         equippedWeapon = 0;
         hp = MaxPlayerHealth;
