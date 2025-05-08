@@ -219,7 +219,7 @@ public class manager : MonoBehaviour
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
         hpbar.value = hp/MaxPlayerHealth;
-        wavetextshop.text = "Start Wave "+wave.ToString();
+        wavetextshop.text = "Start Wave "+(wave+1).ToString();
 
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();
