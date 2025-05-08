@@ -31,11 +31,6 @@ public class manager : MonoBehaviour
     [SerializeField] zombieSpawn[] wave8 = { };
     [SerializeField] zombieSpawn[] wave9 = { };
     [SerializeField] zombieSpawn[] wave10= { };
-    [SerializeField] zombieSpawn[] wave11= { };
-    [SerializeField] zombieSpawn[] wave12 = { };
-    [SerializeField] zombieSpawn[] wave13 = { };
-    [SerializeField] zombieSpawn[] wave14 = { };
-    [SerializeField] zombieSpawn[] wave15 = { };
 
     public GameObject mainUI;
     public GameObject shopUI;
@@ -127,12 +122,7 @@ public class manager : MonoBehaviour
         else if (wave == 7) zombie = wave7;
         else if (wave == 8) zombie = wave8;
         else if (wave == 9) zombie = wave9;
-        else if (wave == 10) zombie = wave10;
-        else if (wave == 11) zombie = wave11;
-        else if (wave == 12) zombie = wave12;
-        else if (wave == 13) zombie = wave13;
-        else if (wave == 14) zombie = wave14;
-        else zombie = wave15;
+        else zombie = wave10;
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
     }
