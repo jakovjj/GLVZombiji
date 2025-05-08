@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: ZombiePoison
   m_EditorClassIdentifier: 
   projectileTargets: Player Obstacle
-  projectileSprite: {fileID: -3344109308573375468, guid: 6f0eef2bf3217f748845f1ed3725e7fb, type: 3}
+  projectileSprite: {fileID: -1191388590976834067, guid: 7873e63d5b938b74a846b696381d1e19, type: 3}
   damage: 1
   damageType: 0
   speed: 0.2
   projectileLifetime: 10
-  projectileSizeX: 0.12
-  projectileSizeY: 0.12
+  projectileSizeX: 2
+  projectileSizeY: 2
   projectilePierce: 0

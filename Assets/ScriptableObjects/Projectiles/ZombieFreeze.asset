@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: ZombieFreeze
   m_EditorClassIdentifier: 
   projectileTargets: Player Obstacle
-  projectileSprite: {fileID: -385344186485632085, guid: 6064370426f01684ab7aaf26f4b45b79, type: 3}
+  projectileSprite: {fileID: 21300000, guid: 2a9bd58a9fee10042ae1a75706e04308, type: 3}
   damage: 1
   damageType: 0
   speed: 0.2
   projectileLifetime: 10
-  projectileSizeX: 0.12
-  projectileSizeY: 0.12
+  projectileSizeX: 0.8
+  projectileSizeY: 0.8
   projectilePierce: 0
