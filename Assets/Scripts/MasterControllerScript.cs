@@ -18,6 +18,7 @@ public class MasterControllerScript : MonoBehaviour
 
     private void Start()
     {
+        playerHealth = 50f;
         redLaserDamage = 25f;
         binaryDamageMult = 2f;
         lighningDamage = 9f;
