@@ -313,10 +313,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombies:
-  - {fileID: 5053147421426312868, guid: 292bbd283e662684e983316da85732dd, type: 3}
   - {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
   - {fileID: 5747460456256806824, guid: 21c533807fdddd848bdca0bc3c76dc32, type: 3}
-  amount: 7
+  amount: 4
 --- !u!1 &1238238079531067900
 GameObject:
   m_ObjectHideFlags: 0
