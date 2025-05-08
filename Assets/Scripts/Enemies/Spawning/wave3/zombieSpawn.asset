@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e044dac4b85074aa4ee2fdf975bc1a, type: 3}
   m_Name: zombieSpawn
   m_EditorClassIdentifier: 
-  cnt: 1
-  downtime: 2
-  zombieType: {fileID: 5747460456256806824, guid: 0689a3473b5534347956bacbf17ca505, type: 3}
+  cnt: 5
+  downtime: 3
+  zombieType: {fileID: 1921437808125921945, guid: 4f77cfca326342c40aa8dead9922b961, type: 3}
