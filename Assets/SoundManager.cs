@@ -5,19 +5,20 @@ using UnityEngine;
 
 public enum SoundEffect
 {
-    Explosion,
-    HitMedium,
-    Laser,
-    LaserCharge,
-    CoinPickup,
-    ShootLarge,
-    Tomato,
-    ZomDeath,
-    ZomHurt,
-    SonicBoom,
-    BinaryThing2,
-    LaserTest,
-    GasAttack
+    Explosion,              //Eksploztija
+    HitMedium,              //Udar s zidom
+    Laser,                  //Ne koristi se
+    LaserCharge,            //Laser charge
+    CoinPickup,             //Coinovi
+    ShootLarge,             //Weaponi 0, 1
+    Tomato,                 //Zombie death
+    ZomDeath,               //Nema korist
+    ZomHurt,                //Udarac zombija
+    SonicBoom,              //Nema korist
+    BinaryThing2,           //Binarni napad
+    LaserTest,              //Trenutni Laser
+    GasAttack,              //Plinski napad
+    Ooof                    //Player death
 }
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour

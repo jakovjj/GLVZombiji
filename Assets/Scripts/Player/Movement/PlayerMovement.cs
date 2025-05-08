@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDir;
     public bool isDashing;
     public Animator animator;
-   // public AudioSource coinCollect;
     float speedSlowMultiplier;
     void Start()
     {

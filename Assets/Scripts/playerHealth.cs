@@ -17,6 +17,7 @@ public class playerHealth : MonoBehaviour
         if (mngr.hp <= 0)
         {
             die();
+            SoundManager.PlaySound(SoundEffect.Ooof, 1);
         }
         mngr.hp += mngr.rgn * Time.deltaTime;
       //  if (mngr.hp > mngr.mhp) mngr.hp = mngr.mhp;
