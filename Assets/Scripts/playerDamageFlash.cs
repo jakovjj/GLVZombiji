@@ -8,17 +8,22 @@ public class playerDamageFlash : MonoBehaviour
     public SpriteRenderer[] flashSpriteRenderers;
     public Material[] flashMaterials;
     
-    public float damageMultiplier; 
     
     void Start() {
+        gameObject.transform.GetChild(3).gameObject.SetActive(true);
+        gameObject.transform.GetChild(4).gameObject.SetActive(true);
+        gameObject.transform.GetChild(5).gameObject.SetActive(true);
         flashSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         Init();
-        
+        gameObject.transform.GetChild(3).gameObject.SetActive(false);
+        gameObject.transform.GetChild(4).gameObject.SetActive(false);
+        gameObject.transform.GetChild(5).gameObject.SetActive(false);
         for (int i = 0; i < flashMaterials.Length; i++) {flashMaterials[i].SetFloat("_flashBinaryVal", 1f);}
     }
 
     public void takeDamage()
     {
+       // Debug.Log("aa");
         StartCoroutine(damageFlash());
     }
     #region damage Flash

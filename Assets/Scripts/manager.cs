@@ -19,7 +19,7 @@ public class manager : MonoBehaviour
     public Projectile[] weaponProjectile = { };
     public GameObject[] bulletPrefabs= { };
     public PlayerMovement PlayerMovement;
-
+    public playerDamageFlash playerDamageFlash;
     //enemy prefabs
 
     public zombieSpawn[] zombie = { };
@@ -63,6 +63,7 @@ public class manager : MonoBehaviour
     public GameObject[] AbilityLocked = {};
 
     void Start() {
+        playerDamageFlash.GetComponent<playerDamageFlash>();
         lucko = GameObject.Find("Lucko");
         MaxPlayerHealth = 50;
         PlayerMovement = lucko.transform.GetChild(0).GetComponent<PlayerMovement>();
@@ -227,6 +228,7 @@ public class manager : MonoBehaviour
     }
     public void getDamage(float amount, bool hasKnockBack, Vector2 dir)
     {
+        playerDamageFlash.takeDamage();
         /*if (hasKnockBack && canTakeKnockback)
         {
             lucko.transform.GetChild(0).GetComponent<Rigidbody2D>().AddForce(dir * 500, ForceMode2D.Impulse);
