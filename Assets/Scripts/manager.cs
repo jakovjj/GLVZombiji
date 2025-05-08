@@ -17,14 +17,14 @@ public class manager : MonoBehaviour
     [HideInInspector] public int equippedWeapon;
     [HideInInspector] public float[] weaponCooldown = { };
     public Projectile[] weaponProjectile = { };
-    public GameObject[] bulletPrefabs= { };
+    public GameObject[] bulletPrefabs = { };
     public PlayerMovement PlayerMovement;
 
     //enemy prefabs
 
     public zombieSpawn[] zombie = { };
     public zombieSpawn[] wave1 = { };
-    public  zombieSpawn[] wave2 = { };
+    public zombieSpawn[] wave2 = { };
     [SerializeField] zombieSpawn[] wave3 = { };
     [SerializeField] zombieSpawn[] wave4 = { };
     [SerializeField] zombieSpawn[] wave5 = { };
@@ -32,7 +32,7 @@ public class manager : MonoBehaviour
     [SerializeField] zombieSpawn[] wave7 = { };
     [SerializeField] zombieSpawn[] wave8 = { };
     [SerializeField] zombieSpawn[] wave9 = { };
-    [SerializeField] zombieSpawn[] wave10= { };
+    [SerializeField] zombieSpawn[] wave10 = { };
 
     public GameObject mainUI;
     public GameObject shopUI;
@@ -53,8 +53,11 @@ public class manager : MonoBehaviour
     public Text waveendtext;
     public Slider hpbar;
     public GameObject lucko;
+    public GameObject[] AbilitesUnlocked = { };
+    public GameObject[] Abiliteslocked = { };
 
-    void Start() {
+    void Start()
+    {
         lucko = GameObject.Find("Lucko");
         MaxPlayerHealth = 50;
         PlayerMovement = lucko.transform.GetChild(0).GetComponent<PlayerMovement>();
@@ -67,14 +70,17 @@ public class manager : MonoBehaviour
         newWave();
     }
 
-    public void pickAbility(int index) {
-       if(LaserTemporary.isLaserOn==false) equippedWeapon = index;
+    public void pickAbility(int index)
+    {
+        if (LaserTemporary.isLaserOn == false) equippedWeapon = index;
     }
-    
-    private IEnumerator summonZombie() {
-        while (timer > 0) {
+
+    private IEnumerator summonZombie()
+    {
+        while (timer > 0)
+        {
             float posX = Random.Range(-19f, 16.5f);
-            float posY = Random.Range(-12.8f, 3.5f); 
+            float posY = Random.Range(-12.8f, 3.5f);
 
             int rng = Random.Range(0, zombie.Length);
             //Instantiate(zombie[rng-1], new Vector3(posX, posY, 0f), Quaternion.identity);
@@ -82,8 +88,8 @@ public class manager : MonoBehaviour
             {
                 float xOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
                 float yOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
-                Vector3 cur=new Vector3(posX, posY, 0f);
-                Vector3 spawnPosition = cur+  new Vector3(xOffset, yOffset, 0);
+                Vector3 cur = new Vector3(posX, posY, 0f);
+                Vector3 spawnPosition = cur + new Vector3(xOffset, yOffset, 0);
                 NavMeshHit hit;
                 bool isOnNavMesh = NavMesh.SamplePosition(spawnPosition, out hit, 0.5f, NavMesh.AllAreas);
 
@@ -99,14 +105,16 @@ public class manager : MonoBehaviour
                 }*/
                 Instantiate(zombie[rng].zombieType, spawnPosition, Quaternion.identity);
             }
-            
+
 
             yield return new WaitForSeconds(zombie[rng].downtime);
         }
     }
 
-    private IEnumerator tickTimer() {
-        while (timer > 0) {
+    private IEnumerator tickTimer()
+    {
+        while (timer > 0)
+        {
             yield return new WaitForSeconds(1);
             timer--;
         }
@@ -114,31 +122,35 @@ public class manager : MonoBehaviour
         openShop();
     }
 
-    public void openShop() {
+    public void openShop()
+    {
         mainUI.SetActive(false);
         shopUI.SetActive(true);
         play = false;
         PlayerMovement.speedSlowMultiplier = 0f;
     }
 
-    public void playerDie() {
+    public void playerDie()
+    {
         play = false;
-        waveendtext.text = "You made it to wave "+wave.ToString();
+        waveendtext.text = "You made it to wave " + wave.ToString();
         gameOverUI.SetActive(true);
     }
 
-    public void playAgain() {
+    public void playAgain()
+    {
         SceneManager.LoadScene("zombeki");
     }
 
-    public void newWave() {
+    public void newWave()
+    {
         mainUI.SetActive(true);
         shopUI.SetActive(false);
         play = true;
 
         timer = 50;
         PlayerMovement.speedSlowMultiplier = 1f;
-        wave = wave+1;
+        wave = wave + 1;
         if (wave == 1) zombie = wave1;
         else if (wave == 2) zombie = wave2;
         else if (wave == 3) zombie = wave3;
@@ -151,20 +163,54 @@ public class manager : MonoBehaviour
         else zombie = wave10;
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
+        OnChangeWave();
     }
+    void OnChangeWave()
+    {
+        if (wave == 1)
+        {
+            AbilitesUnlocked[0].SetActive(true);
+            Abiliteslocked[0].SetActive(false);
+        }
 
-    void Update() {
+        if (wave == 3)
+        {
+            AbilitesUnlocked[1].SetActive(true);
+            Abiliteslocked[1].SetActive(false);
+        }
+
+        if (wave == 5)
+        {
+            AbilitesUnlocked[2].SetActive(true);
+            Abiliteslocked[2].SetActive(false);
+        }
+
+        if (wave == 6)
+        {
+            AbilitesUnlocked[3].SetActive(true);
+            Abiliteslocked[3].SetActive(false);
+        }
+
+        if (wave == 8)
+        {
+            AbilitesUnlocked[4].SetActive(true);
+            Abiliteslocked[4].SetActive(false);
+        }
+    }
+    void Update()
+    {
         //Debug.Log(equippedWeapon);
-        texthp.text = hp.ToString()+"/"+MaxPlayerHealth.ToString();
+        texthp.text = hp.ToString() + "/" + MaxPlayerHealth.ToString();
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
-        hpbar.value = hp/MaxPlayerHealth;
-        wavetextshop.text = "Start Wave "+wave.ToString();
+        hpbar.value = hp / MaxPlayerHealth;
+        wavetextshop.text = "Start Wave " + wave.ToString();
 
-        textwave.text = "Wave "+wave.ToString();
+        textwave.text = "Wave " + wave.ToString();
         texttime.text = timer.ToString();
 
-        if (hp <= 0 && immortal == false) {
+        if (hp <= 0 && immortal == false)
+        {
             playerDie();
             hp = 0;
         }
@@ -184,9 +230,9 @@ public class manager : MonoBehaviour
         }*/
         hp -= amount;
     }
-   /* public IEnumerator resetKnockback(float tm)
-    {
-        yield return new WaitForSeconds(tm);
-        canTakeKnockback = true;
-    }*/
+    /* public IEnumerator resetKnockback(float tm)
+     {
+         yield return new WaitForSeconds(tm);
+         canTakeKnockback = true;
+     }*/
 }
