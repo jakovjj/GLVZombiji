@@ -166,8 +166,17 @@ public class manager : MonoBehaviour
     }
 
     public void shopShuffle() {
-        if (shopSlot1.transform.childCount > 0) {Destroy(shopSlot1.transform.GetChild(0));}
-        if (shopSlot2.transform.childCount > 0) {Destroy(shopSlot2.transform.GetChild(0));}
+       if (shopSlot1.transform.childCount > 0) {Destroy(shopSlot1.transform.GetChild(0).gameObject);}
+       if (shopSlot2.transform.childCount > 0) {Destroy(shopSlot2.transform.GetChild(0).gameObject);}
+
+       int idx1 = -1;
+       int idx2 = -1;
+
+       while (idx1 == -1 || (idx1 == 8 && wave < 3) || (idx1 == 10 && wave < 5) || (idx1 == 4 && wave < 6) || (idx1 == 3 && wave < 8)) idx1 = Random.Range(0, 11);
+       while (idx2 == -1 || (idx2 == 8 && wave < 3) || (idx2 == 10 && wave < 5) || (idx2 == 4 && wave < 6) || (idx2 == 3 && wave < 8) || idx2 == idx1) idx2 = Random.Range(0, 11);
+
+       Instantiate(itemVector[idx1], shopSlot1.transform);
+       Instantiate(itemVector[idx2], shopSlot2.transform);
     }
 
     public void playerDie() {

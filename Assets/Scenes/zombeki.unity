@@ -21678,6 +21678,7 @@ MonoBehaviour:
   - {fileID: 3764998779285548292, guid: 9779bf42af92d5242921085be5ea12b8, type: 3}
   - {fileID: 3764998779285548292, guid: dfcbcacc3cec8064e83ec3eca13bc7bf, type: 3}
   - {fileID: 3764998779285548292, guid: 2d045991e7d688247944f6be7700bc34, type: 3}
+  - {fileID: 3764998779285548292, guid: bbf8409c5ff8c4c47941b8468aed9cd7, type: 3}
   mainUI: {fileID: 1703093748}
   shopUI: {fileID: 1470116415}
   pauseUI: {fileID: 0}
@@ -30448,9 +30449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b0ff8a425214f4a828166ef548cf8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 6
-  playerHealth: 20
-  redLaserDamage: 0
 --- !u!4 &1920155426
 Transform:
   m_ObjectHideFlags: 0
@@ -31583,7 +31581,6 @@ MonoBehaviour:
   enemyLayermask:
     serializedVersion: 2
     m_Bits: 512
-  damage: 30
   beamStruck: {fileID: 3752674550694175021, guid: b0b75481cc2ad5342928a098783cc33d, type: 3}
   obstacleLayerMask:
     serializedVersion: 2
@@ -31604,6 +31601,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 2117586789}
   projectileSpeed: 8
   timeBetweenShots: 0.3
+  cldwn: 0
 --- !u!114 &2117586807
 MonoBehaviour:
   m_ObjectHideFlags: 0
