@@ -10,14 +10,12 @@ public class playerHealth : MonoBehaviour
     public static float PlayerHealth;
     public void Awake()
     {
-      //mngr.hp = mngr.mhp;
+      mngr.hp = manager.MaxPlayerHealth;
+      Debug.Log(mngr.hp+" "+manager.MaxPlayerHealth);
     }
     void Update()
     {
-        if (mngr.hp <= 0)
-        {
-            die();
-        }
+        if (mngr.hp <= 0) die();
         mngr.hp += mngr.rgn * Time.deltaTime;
       //  if (mngr.hp > mngr.mhp) mngr.hp = mngr.mhp;
     }
