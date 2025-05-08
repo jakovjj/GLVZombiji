@@ -73,7 +73,7 @@ public class PlayerAttack : MonoBehaviour
             shoot?.Invoke(playerStats.equippedWeapon);
         }
         cam.orthographicSize=defaultCameraSize;
-        gunCooldown -= Time.deltaTime;
+        gunCooldown -= Time.deltaTime*MasterControllerScript.playerAttackSpeed;
         //Debug.Log(gunCooldown+"s "+playerStats.equippedWeapon);
     }
     private void FixedUpdate()

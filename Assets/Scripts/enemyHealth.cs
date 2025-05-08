@@ -77,7 +77,7 @@ public class enemyHealth : MonoBehaviour
     void Update()
     {   
         if (managerGO.GetComponent<manager>().play == false) health = 0;
-        if (health <= 0)
+        if (health <= 0.001f)
         {
             die();
         }
@@ -87,7 +87,7 @@ public class enemyHealth : MonoBehaviour
     public void Damage(float amount,bool hasKnockback,Vector3 dir)
     {
         if (gameObject.GetComponent<WasStruckByBinaryAttack>() == null) damageMultiplier = 1;
-        else damageMultiplier = GameObject.Find("Lucko").transform.GetChild(0).GetComponent<BinaryAttack>().increasePlayerDamageBy;
+        else damageMultiplier = MasterControllerScript.binaryDamageMult;
         health -= amount*damageMultiplier;
         if(!isWorker) gameObject.GetComponent<EnemyMove>().hasBeenHit = true;
         StartCoroutine(damageFlash());
@@ -97,7 +97,7 @@ public class enemyHealth : MonoBehaviour
             if(!isWorker)gameObject.GetComponent<EnemyMove>().enabled = false;
             if(isWorker) gameObject.GetComponent<WorkerZombieMove>().enabled = false;
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 5, ForceMode2D.Impulse);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 5 *MasterControllerScript.knockbackMult, ForceMode2D.Impulse);
             StartCoroutine(resetForce());
         }
         

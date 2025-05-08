@@ -69,7 +69,7 @@ public class ProjectileBehaviour : MonoBehaviour
                     }
                     else
                     {
-                        targetHealthScript.Damage(damage, true, dir);
+                        targetHealthScript.Damage(MasterControllerScript.redLaserDamage, true, dir);
                     }
                 }
                 else if (target.tag == "Player")
