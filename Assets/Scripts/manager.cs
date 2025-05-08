@@ -54,12 +54,15 @@ public class manager : MonoBehaviour
     public Slider hpbar;
     public GameObject lucko;
 
+    public GameObject shopSlot1;
+    public GameObject shopSlot2;
+
     void Start() {
         lucko = GameObject.Find("Lucko");
         MaxPlayerHealth = 50;
         PlayerMovement = lucko.transform.GetChild(0).GetComponent<PlayerMovement>();
         equippedWeapon = 0;
-        hp = MaxPlayerHealth;
+        hp = 50;
         dmg = 1f; coin = 0;
         wave = 0; timer = 30;
         weaponCooldown = new float[] { 0.2f, 0.35f, 0.2f, 0.2f, 0.2f };
@@ -119,6 +122,19 @@ public class manager : MonoBehaviour
         shopUI.SetActive(true);
         play = false;
         PlayerMovement.speedSlowMultiplier = 0f;
+        shopShuffle();
+    }
+
+    public void reroll() {
+        if (coin >= 5) {
+            coin -= 5;
+            shopShuffle();
+        }
+    }
+
+    public void shopShuffle() {
+        if (shopSlot1.transform.childCount > 0) {Destroy(shopSlot1.transform.GetChild(0));}
+        if (shopSlot2.transform.childCount > 0) {Destroy(shopSlot2.transform.GetChild(0));}
     }
 
     public void playerDie() {
