@@ -63,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void waveStart()
     {
-        rb.position = new Vector2(0,0);
+        rb.position = new Vector2(-1.28f, 5.84f);
     }
     void Update()   
     {
