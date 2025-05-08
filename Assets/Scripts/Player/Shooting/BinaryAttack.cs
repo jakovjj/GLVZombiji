@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,15 +7,27 @@ public class BinaryAttack : MonoBehaviour
     public GameObject projectilePrefab; // Assign a projectile prefab in Unity
     public float projectileSpeed = 10f;
     public float increasePlayerDamageBy;
-
+    public float timeBetweenAttacks;
+    private bool canAttack;
+    private void Start()
+    {
+        canAttack = true;
+    }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 4 && EventSystem.current.IsPointerOverGameObject() == false) // Left mouse button
+        if (canAttack && Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 4 && EventSystem.current.IsPointerOverGameObject() == false) // Left mouse button
         {
             ShootProjectile();
+            canAttack = false;
+            StartCoroutine(resetCanAttack());
         }
     }
-
+    public IEnumerator resetCanAttack()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(timeBetweenAttacks);
+        canAttack = true;
+    }
     void ShootProjectile()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

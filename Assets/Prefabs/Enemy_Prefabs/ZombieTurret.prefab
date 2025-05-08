@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  timeBetweenAttack: 0.27
+  timeBetweenAttack: 0.5
   projectile: {fileID: 1897620257027733417, guid: 8b6cd0a44e30940448413568b8124fb3, type: 3}
   projectileSpawnPoint: {fileID: 7583614660668517842}
   projectiletype: {fileID: 11400000, guid: 77b1a31961bed4346a70a3529dab3799, type: 2}

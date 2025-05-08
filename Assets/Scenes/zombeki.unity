@@ -31884,6 +31884,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6193573700786090857, guid: 14002a6a8435a0a4084b2b467f81c14c, type: 3}
   projectileSpeed: 10
   increasePlayerDamageBy: 10
+  timeBetweenAttacks: 0.5
 --- !u!1 &2128311148
 GameObject:
   m_ObjectHideFlags: 0
