@@ -148,6 +148,7 @@ public class manager : MonoBehaviour
         shopUI.SetActive(false);
         play = true;
 
+        hp = MaxPlayerHealth;
         timer = 50;
         PlayerMovement.speedSlowMultiplier = 1f;
         wave = wave + 1;
