@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ShamanAttack : MonoBehaviour
 {
@@ -30,10 +31,11 @@ public class ShamanAttack : MonoBehaviour
         {
             Vector2 spawnOffset = Random.insideUnitCircle * spawnRadius; 
             Vector2 spawnPosition = (Vector2)transform.position + spawnOffset;
-            if(spawnPosition.x>14 || spawnPosition.x<-14 || spawnPosition.y>14 || spawnPosition.y < -14)
+            NavMeshHit hit;
+            bool isOnNavMesh = NavMesh.SamplePosition(spawnPosition, out hit, 0.5f, NavMesh.AllAreas);
+            if (!isOnNavMesh)
             {
-                i--;
-                continue;
+                break;
             }
 
             Instantiate(zombies[Random.Range(0, zombies.Length)], spawnPosition, Quaternion.identity);
