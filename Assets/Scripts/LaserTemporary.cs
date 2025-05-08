@@ -19,7 +19,6 @@ public class LaserTemporary : MonoBehaviour
     public AudioSource charge;
     public AudioSource beam;
     public LayerMask enemyLayermask;
-    public float damage;
     public GameObject beamStruck;
     public LayerMask obstacleLayerMask;
     public static bool isLaserOn=false;
@@ -89,7 +88,7 @@ public class LaserTemporary : MonoBehaviour
             if (!validHits[i].collider.gameObject.GetComponentInChildren<BeamStruck>())
             {
                 Instantiate(beamStruck, validHits[i].collider.gameObject.transform);
-                validHits[i].collider.gameObject.GetComponent<enemyHealth>().Damage(damage, false, Vector3.zero);
+                validHits[i].collider.gameObject.GetComponent<enemyHealth>().Damage(MasterControllerScript.hyperbeamDamage, false, Vector3.zero);
             }
         }
 

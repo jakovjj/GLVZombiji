@@ -4,17 +4,19 @@ using UnityEngine.EventSystems;
 
 public class PoisonAttack : MonoBehaviour
 {
-    public static float playerPoisonDmg=10f;
     public GameObject projectilePrefab;
     public Transform spawnPoint;
     public float projectileSpeed = 1.5f;
     public float timeBetweenShots = 0.7f;
+    public float cldwn;
     //public float projectileSpeed;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2 && EventSystem.current.IsPointerOverGameObject() == false) 
+        cldwn -= Time.deltaTime * MasterControllerScript.playerAttackSpeed;
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2 && EventSystem.current.IsPointerOverGameObject() == false && cldwn<=0) 
         {
             ShootConeAttack();
+            cldwn = timeBetweenShots;
         }
     }
 
