@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.AI;
 
 public class manager : MonoBehaviour
 {
@@ -70,8 +71,8 @@ public class manager : MonoBehaviour
     
     private IEnumerator summonZombie() {
         while (timer > 0) {
-            float posX = Random.Range(-14.0f, 14.0f);
-            float posY = Random.Range(-14.0f, 14.0f); 
+            float posX = Random.Range(-19f, 16.5f);
+            float posY = Random.Range(-12.8f, 3.5f); 
 
             int rng = Random.Range(0, zombie.Length);
             //Instantiate(zombie[rng-1], new Vector3(posX, posY, 0f), Quaternion.identity);
@@ -81,11 +82,19 @@ public class manager : MonoBehaviour
                 float yOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
                 Vector3 cur=new Vector3(posX, posY, 0f);
                 Vector3 spawnPosition = cur+  new Vector3(xOffset, yOffset, 0);
-                if (spawnPosition.y < -14|| spawnPosition.y > 14 || spawnPosition.x < -14 || spawnPosition.x > 14)
+                NavMeshHit hit;
+                bool isOnNavMesh = NavMesh.SamplePosition(spawnPosition, out hit, 0.5f, NavMesh.AllAreas);
+
+                if (!isOnNavMesh)
+                {
+                    break;
+                }
+
+                /*if (spawnPosition.y < -14|| spawnPosition.y > 14 || spawnPosition.x < -14 || spawnPosition.x > 14)
                 {
                     i--;
                     continue;
-                }
+                }*/
                 Instantiate(zombie[rng].zombieType, spawnPosition, Quaternion.identity);
             }
             
