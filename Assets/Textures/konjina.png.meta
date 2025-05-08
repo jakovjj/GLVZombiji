@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      konjina_0: 8692255082755034599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

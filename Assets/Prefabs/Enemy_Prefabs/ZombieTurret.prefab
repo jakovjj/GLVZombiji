@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisUnit: {fileID: 1274361454614779477}
   healthBar: {fileID: 2816818787262219447, guid: 49aac66d2b337384eb41c0edbed66879, type: 3}
-  maxHealth: 79
+  maxHealth: 40
   healthBarLocation: {fileID: 4491351138632468653}
   coinDrop: {fileID: 5747460456256806824, guid: 8a6cbd79f0572844bac104dc2f1fe354, type: 3}
   managerGO: {fileID: 0}
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  timeBetweenAttack: 0.2
+  timeBetweenAttack: 0.27
   projectile: {fileID: 1897620257027733417, guid: 8b6cd0a44e30940448413568b8124fb3, type: 3}
   projectileSpawnPoint: {fileID: 7583614660668517842}
   projectiletype: {fileID: 11400000, guid: 77b1a31961bed4346a70a3529dab3799, type: 2}

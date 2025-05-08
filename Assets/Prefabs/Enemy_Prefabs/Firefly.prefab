@@ -394,7 +394,7 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   animator: {fileID: 0}
-  DetectRadius: 8
+  DetectRadius: 5
   InteractionRadius: 0.1
   whatIsPlayer:
     serializedVersion: 2
@@ -403,7 +403,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   IdleSpeed: 3
-  ChaseSpeed: 4
+  ChaseSpeed: 5.8
   hasDetected: 0
   isInInteractionRadius: 0
   isInSight: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisUnit: {fileID: 6507910054846680715}
   healthBar: {fileID: 2816818787262219447, guid: 49aac66d2b337384eb41c0edbed66879, type: 3}
-  maxHealth: 79
+  maxHealth: 35
   healthBarLocation: {fileID: 5005479398438741047}
   coinDrop: {fileID: 5747460456256806824, guid: 8a6cbd79f0572844bac104dc2f1fe354, type: 3}
   managerGO: {fileID: 0}
@@ -432,6 +432,9 @@ MonoBehaviour:
   zombieHurt: {fileID: 0}
   zombieDeath: {fileID: 0}
   deathParticles: {fileID: 5560324632923741662, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+  cantTakeKnockback: 0
+  isWorker: 0
+  damageMultiplier: 0
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.25
 --- !u!61 &825101134059214521

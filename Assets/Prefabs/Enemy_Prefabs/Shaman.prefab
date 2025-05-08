@@ -165,16 +165,16 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   animator: {fileID: 0}
-  DetectRadius: 6
-  InteractionRadius: 4
+  DetectRadius: 5
+  InteractionRadius: 5
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 128
-  IdleSpeed: 3
-  ChaseSpeed: 4
+  IdleSpeed: 1
+  ChaseSpeed: 1
   hasDetected: 0
   isInInteractionRadius: 0
   isInSight: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisUnit: {fileID: 3548550781530934753}
   healthBar: {fileID: 2816818787262219447, guid: 49aac66d2b337384eb41c0edbed66879, type: 3}
-  maxHealth: 79
+  maxHealth: 60
   healthBarLocation: {fileID: 2032141675149244310}
   coinDrop: {fileID: 5747460456256806824, guid: 8a6cbd79f0572844bac104dc2f1fe354, type: 3}
   managerGO: {fileID: 0}

@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisUnit: {fileID: 6274840033122767217}
   healthBar: {fileID: 2816818787262219447, guid: 49aac66d2b337384eb41c0edbed66879, type: 3}
-  maxHealth: 79
+  maxHealth: 110
   healthBarLocation: {fileID: 7837914126468593638}
   coinDrop: {fileID: 5747460456256806824, guid: 8a6cbd79f0572844bac104dc2f1fe354, type: 3}
   managerGO: {fileID: 0}
@@ -143,6 +143,7 @@ MonoBehaviour:
   deathParticles: {fileID: 5560324632923741662, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
   cantTakeKnockback: 0
   isWorker: 1
+  damageMultiplier: 0
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.25
 --- !u!61 &1816590089727684719
