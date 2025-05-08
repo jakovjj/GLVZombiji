@@ -59,6 +59,9 @@ public class manager : MonoBehaviour
     public GameObject shopSlot1;
     public GameObject shopSlot2;
 
+    public GameObject[] AbilityUnlocked = {};
+    public GameObject[] AbilityLocked = {};
+
     void Start() {
         lucko = GameObject.Find("Lucko");
         MaxPlayerHealth = 50;
@@ -109,7 +112,35 @@ public class manager : MonoBehaviour
             yield return new WaitForSeconds(zombie[rng].downtime);
         }
     }
+    public void onWaveChange()
+    {
+        if (wave == 1)
+        {
+            AbilityLocked[0].SetActive(false);
+            AbilityUnlocked[0].SetActive(true);
 
+        }
+        if (wave == 3)
+        {
+            AbilityLocked[1].SetActive(false);
+            AbilityUnlocked[1].SetActive(true);
+        }
+        if (wave == 5)
+        {
+            AbilityLocked[2].SetActive(false);
+            AbilityUnlocked[2].SetActive(true);
+        }
+        if (wave == 6)
+        {
+            AbilityLocked[3].SetActive(false);
+            AbilityUnlocked[3].SetActive(true);
+        }
+        if (wave == 8)
+        {
+            AbilityLocked[4].SetActive(false);
+            AbilityUnlocked[4].SetActive(true);
+        }
+    }
     private IEnumerator tickTimer() {
         while (timer > 0) {
             yield return new WaitForSeconds(1);
@@ -170,6 +201,7 @@ public class manager : MonoBehaviour
         else zombie = wave10;
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
+        onWaveChange();
     }
 
     void Update() {
