@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.AI;
@@ -40,6 +41,8 @@ public class manager : MonoBehaviour
 
     public GameObject mainUI;
     public GameObject shopUI;
+    public GameObject pauseUI;
+    public GameObject gameOverUI;
 
     [HideInInspector] public int wave;
     [HideInInspector] public int timer;
@@ -50,12 +53,13 @@ public class manager : MonoBehaviour
     public Text textcoin;
     public Text textcoinshop;
     public Text wavetextshop;
+    public Text waveendtext;
     public Slider hpbar;
     public GameObject lucko;
 
     void Start() {
         lucko = GameObject.Find("Lucko");
-        MaxPlayerHealth = 20;
+        MaxPlayerHealth = 20; hp = 20;
         PlayerMovement = lucko.transform.GetChild(0).GetComponent<PlayerMovement>();
         equippedWeapon = 0;
         hp = MaxPlayerHealth;
@@ -120,6 +124,16 @@ public class manager : MonoBehaviour
         PlayerMovement.speedSlowMultiplier = 0f;
     }
 
+    public void playerDie() {
+        play = false;
+        waveendtext.text = "You made it to wave "+wave.ToString();
+        gameOverUI.SetActive(true);
+    }
+
+    public void playAgain() {
+        SceneManager.LoadScene("zombeki");
+    }
+
     public void newWave() {
         mainUI.SetActive(true);
         shopUI.SetActive(false);
@@ -157,11 +171,15 @@ public class manager : MonoBehaviour
 
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();
+
+        if (hp <= 0) {
+            playerDie();
+            hp = 0;
+        }
     }
 
     public float calcDamage(float amount)
     {
-
         return amount;
     }
     public void getDamage(float amount, bool hasKnockBack, Vector2 dir)
