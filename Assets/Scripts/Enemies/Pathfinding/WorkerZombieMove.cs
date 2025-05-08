@@ -48,12 +48,12 @@ public class WorkerZombieMove : MonoBehaviour
         Vector3 randomPoint;
         do
         {
-            randomPoint = new Vector3(Random.Range(-14f, 14f), Random.Range(-14f, 14f), 0f);
+            randomPoint = new Vector3(Random.Range(-19f, 16.5f), Random.Range(-12.8f, 3.5f), 0f);
         }
         while (Vector3.Distance(randomPoint, player.position) < safeDistance);
 
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(randomPoint, out hit, 0.5f, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
         }
