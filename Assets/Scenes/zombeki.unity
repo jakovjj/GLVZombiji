@@ -31787,7 +31787,7 @@ MonoBehaviour:
   enemyLayermask:
     serializedVersion: 2
     m_Bits: 512
-  damage: 30
+  damage: 100
   beamStruck: {fileID: 3752674550694175021, guid: b0b75481cc2ad5342928a098783cc33d, type: 3}
   obstacleLayerMask:
     serializedVersion: 2
