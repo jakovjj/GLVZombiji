@@ -42,7 +42,7 @@ public class ChainLightningScript : MonoBehaviour
 
                 endObject = collision.gameObject;
                 amountToChain -= 1;
-                Instantiate(chainLightningEffect, collision.gameObject.transform.position, Quaternion.identity, collision.gameObject.transform);
+                Instantiate(chainLightningEffect, collision.gameObject.transform.position, Quaternion.identity/*, collision.gameObject.transform*/);
                 Instantiate(beenStruck, collision.gameObject.transform);
 
                 collision.gameObject.GetComponent<enemyHealth>().Damage(damage,false, Vector3.zero);
