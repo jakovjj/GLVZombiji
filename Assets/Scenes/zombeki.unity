@@ -21114,6 +21114,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dbd2398257ec2454081f45a5216ba021, type: 2}
   - {fileID: 11400000, guid: f7db29e205e60c842bca25973a88e463, type: 2}
   - {fileID: 11400000, guid: 41d6d0715ef63fe4e885cf6c88498256, type: 2}
+  itemVector:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   mainUI: {fileID: 1703093748}
   shopUI: {fileID: 1470116415}
   pauseUI: {fileID: 0}
