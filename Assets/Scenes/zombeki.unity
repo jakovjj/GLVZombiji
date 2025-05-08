@@ -30887,6 +30887,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1342648894454817296, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0794bd2a8d8d98742b5d361dafa07234, type: 2}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -30927,6 +30931,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1683426024696175518, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0794bd2a8d8d98742b5d361dafa07234, type: 2}
+    - target: {fileID: 3710117681867138311, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0794bd2a8d8d98742b5d361dafa07234, type: 2}
     - target: {fileID: 3723172937687663879, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_CameraType
       value: 0
@@ -30939,6 +30951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lucko
       objectReference: {fileID: 0}
+    - target: {fileID: 4235716000005521888, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0794bd2a8d8d98742b5d361dafa07234, type: 2}
     - target: {fileID: 4762028515355484124, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: coinCollect
       value: 
@@ -30975,6 +30991,18 @@ PrefabInstance:
       propertyPath: laserSound
       value: 
       objectReference: {fileID: 732618935}
+    - target: {fileID: 7647345908824939334, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0794bd2a8d8d98742b5d361dafa07234, type: 2}
+    - target: {fileID: 8305934644210336111, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0794bd2a8d8d98742b5d361dafa07234, type: 2}
+    - target: {fileID: 8548100955174064403, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0794bd2a8d8d98742b5d361dafa07234, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
