@@ -30,6 +30,7 @@ public class BinaryAttack : MonoBehaviour
     }
     void ShootProjectile()
     {
+        SoundManager.PlaySound(SoundEffect.BinaryThing2, 0.6f, 1.15);
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f; // Ensure the projectile stays in 2D space
 

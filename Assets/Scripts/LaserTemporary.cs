@@ -16,16 +16,14 @@ public class LaserTemporary : MonoBehaviour
     public GameObject startVFX;
     public GameObject endVFX;
     private List<ParticleSystem> particles = new List<ParticleSystem>();
-    public AudioSource charge;
-    public AudioSource beam;
     public LayerMask enemyLayermask;
     public GameObject beamStruck;
     public LayerMask obstacleLayerMask;
     public static bool isLaserOn=false;
     private void Start()
     {
-        beam.Stop();
-        charge.Stop();
+     //   beam.Stop();
+     //   charge.Stop();
         FillList();
         for (int i = 0; i < particles.Count; i++)
         {
@@ -42,7 +40,7 @@ public class LaserTemporary : MonoBehaviour
         {
             isCharging = true;
             isLaserOn = true;
-            charge.Play();
+            SoundManager.PlaySound(SoundEffect.LaserTest, 0.8f, 2);
             StartCoroutine(ChargeLaser(2));
 
         }
@@ -55,6 +53,7 @@ public class LaserTemporary : MonoBehaviour
 
     void ShootLaser()
     {
+        SoundManager.PlaySound(SoundEffect.LaserTest, 0.04f, 2);
         Vector3 start = gunTip.position;
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = start.z;
@@ -115,7 +114,7 @@ public class LaserTemporary : MonoBehaviour
     IEnumerator DisableLaserAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        beam.Stop();
+
         lineRenderer.enabled = false;
         for (int i = 0; i < particles.Count; i++)
         {
@@ -129,8 +128,7 @@ public class LaserTemporary : MonoBehaviour
     {
         startVFX.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(delay);
-        charge.Stop();
-        beam.Play();
+
         isShooting = true;
         isLaserOn=true;
         lineRenderer.enabled = true;

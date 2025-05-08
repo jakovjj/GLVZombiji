@@ -15,7 +15,11 @@ public class playerHealth : MonoBehaviour
     }
     void Update()
     {
-        if (mngr.hp <= 0) die();
+        if (mngr.hp <= 0)
+        {
+            die();
+            SoundManager.PlaySound(SoundEffect.Ooof, 1);
+        }
         mngr.hp += mngr.rgn * Time.deltaTime;
       //  if (mngr.hp > mngr.mhp) mngr.hp = mngr.mhp;
     }

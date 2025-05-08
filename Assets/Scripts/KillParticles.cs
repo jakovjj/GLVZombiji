@@ -3,11 +3,11 @@ using UnityEngine;
 public class KillParticles : MonoBehaviour
 {
     private ParticleSystem particles;
-    private AudioSource audioSource;
+  //  private AudioSource audioSource;
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        if(audioSource != null) audioSource.Play();
+        //audioSource = GetComponent<AudioSource>();
+        //if(audioSource != null) audioSource.Play();
         particles = GetComponent<ParticleSystem>();
     }
 
