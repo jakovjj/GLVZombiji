@@ -7,7 +7,7 @@ public class MasterControllerScript : MonoBehaviour
     public float playerHealth;
 
     [Header("Crveni Laser")]
-    public float redLaserDamage;
+    public static float redLaserDamage=1;
 
     private void Update()
     {
