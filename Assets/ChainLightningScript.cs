@@ -5,7 +5,6 @@ public class ChainLightningScript : MonoBehaviour
     private Collider2D coll;
 
     public LayerMask enemyLayer;
-    public float damage;
 
     public GameObject chainLightningEffect;
 
@@ -45,7 +44,7 @@ public class ChainLightningScript : MonoBehaviour
                 Instantiate(chainLightningEffect, collision.gameObject.transform.position, Quaternion.identity/*, collision.gameObject.transform*/);
                 Instantiate(beenStruck, collision.gameObject.transform);
 
-                collision.gameObject.GetComponent<enemyHealth>().Damage(damage,false, Vector3.zero);
+                collision.gameObject.GetComponent<enemyHealth>().Damage(MasterControllerScript.lighningDamage,false, Vector3.zero);
                 ani.StopPlayback();
                 coll.enabled = false;
                 singleSpawns--;
