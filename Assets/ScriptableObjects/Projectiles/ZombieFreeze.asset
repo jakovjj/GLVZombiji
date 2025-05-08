@@ -18,6 +18,6 @@ MonoBehaviour:
   damageType: 0
   speed: 0.2
   projectileLifetime: 10
-  projectileSizeX: 0.8
-  projectileSizeY: 0.8
+  projectileSizeX: 0.5
+  projectileSizeY: 0.5
   projectilePierce: 0
