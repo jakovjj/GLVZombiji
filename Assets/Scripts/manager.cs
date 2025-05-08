@@ -53,6 +53,8 @@ public class manager : MonoBehaviour
     public Text waveendtext;
     public Slider hpbar;
     public GameObject lucko;
+    public GameObject[] AbilitesUnlocked = { };
+    public GameObject[] Abiliteslocked = { };
 
     void Start() {
         lucko = GameObject.Find("Lucko");
@@ -151,8 +153,40 @@ public class manager : MonoBehaviour
         else zombie = wave10;
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
+        OnChangeWave();
     }
+    void OnChangeWave()
+    {
+        if (wave == 1)
+        {
+            AbilitesUnlocked[0].SetActive(true);
+            Abiliteslocked[0].SetActive(false);
+        }
 
+        if (wave == 3)
+        {
+            AbilitesUnlocked[1].SetActive(true);
+            Abiliteslocked[1].SetActive(false);
+        }
+
+        if (wave == 5)
+        {
+            AbilitesUnlocked[2].SetActive(true);
+            Abiliteslocked[2].SetActive(false);
+        }
+
+        if (wave == 6)
+        {
+            AbilitesUnlocked[3].SetActive(true);
+            Abiliteslocked[3].SetActive(false);
+        }
+
+        if (wave == 8)
+        {
+            AbilitesUnlocked[4].SetActive(true);
+            Abiliteslocked[4].SetActive(false);
+        }
+    }
     void Update() {
         //Debug.Log(equippedWeapon);
         texthp.text = hp.ToString()+"/"+MaxPlayerHealth.ToString();
