@@ -39,6 +39,8 @@ public class manager : MonoBehaviour
     public GameObject pauseUI;
     public GameObject gameOverUI;
 
+    public bool immortal;
+
     [HideInInspector] public int wave;
     [HideInInspector] public int timer;
 
@@ -162,7 +164,7 @@ public class manager : MonoBehaviour
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();
 
-        if (hp <= 0) {
+        if (hp <= 0 && immortal == false) {
             playerDie();
             hp = 0;
         }
