@@ -330,8 +330,8 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   animator: {fileID: 0}
-  DetectRadius: 6
-  InteractionRadius: 0.5
+  DetectRadius: 9
+  InteractionRadius: 1
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisUnit: {fileID: 5245555854726800797}
   healthBar: {fileID: 2816818787262219447, guid: 49aac66d2b337384eb41c0edbed66879, type: 3}
-  maxHealth: 395
+  maxHealth: 430
   healthBarLocation: {fileID: 9154500468250833990}
   coinDrop: {fileID: 5747460456256806824, guid: 8a6cbd79f0572844bac104dc2f1fe354, type: 3}
   managerGO: {fileID: 0}
@@ -370,6 +370,7 @@ MonoBehaviour:
   deathParticles: {fileID: 5560324632923741662, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
   cantTakeKnockback: 1
   isWorker: 0
+  damageMultiplier: 0
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.25
 --- !u!61 &6826106309968480674
@@ -457,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524ea5c344de90940a47d1b10ead7f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 30
   timeBetweenAttack: 1
 --- !u!70 &7957519067418799143
 CapsuleCollider2D:

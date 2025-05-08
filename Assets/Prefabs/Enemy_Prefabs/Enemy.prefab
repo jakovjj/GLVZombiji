@@ -393,7 +393,7 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   animator: {fileID: 0}
-  DetectRadius: 6
+  DetectRadius: 9
   InteractionRadius: 0.5
   whatIsPlayer:
     serializedVersion: 2
@@ -401,8 +401,8 @@ MonoBehaviour:
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 128
-  IdleSpeed: 3
-  ChaseSpeed: 4
+  IdleSpeed: 1
+  ChaseSpeed: 3.6
   hasDetected: 0
   isInInteractionRadius: 0
   isInSight: 0

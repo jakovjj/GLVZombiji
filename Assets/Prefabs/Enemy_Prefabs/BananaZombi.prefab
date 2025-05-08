@@ -361,7 +361,7 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   animator: {fileID: 0}
-  DetectRadius: 6
+  DetectRadius: 9
   InteractionRadius: 4
   whatIsPlayer:
     serializedVersion: 2
@@ -369,8 +369,8 @@ MonoBehaviour:
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 128
-  IdleSpeed: 3
-  ChaseSpeed: 4
+  IdleSpeed: 1
+  ChaseSpeed: 2
   hasDetected: 0
   isInInteractionRadius: 0
   isInSight: 0
@@ -399,6 +399,9 @@ MonoBehaviour:
   zombieHurt: {fileID: 0}
   zombieDeath: {fileID: 0}
   deathParticles: {fileID: 5560324632923741662, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
+  cantTakeKnockback: 0
+  isWorker: 0
+  damageMultiplier: 0
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.25
 --- !u!61 &564887644840188299
@@ -523,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  timeBetweenAttack: 1
+  timeBetweenAttack: 1.4
   projectile: {fileID: 1897620257027733417, guid: 8b6cd0a44e30940448413568b8124fb3, type: 3}
   projectileSpawnPoint: {fileID: 5090452687134348791}
   projectiletype: {fileID: 11400000, guid: 77b1a31961bed4346a70a3529dab3799, type: 2}

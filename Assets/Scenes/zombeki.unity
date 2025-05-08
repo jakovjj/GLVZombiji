@@ -21615,6 +21615,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c01c2aa7fc642d43b55d48a24a978e7, type: 2}
   - {fileID: 11400000, guid: 2dd74b381c66c2449b11363a82678fba, type: 2}
   - {fileID: 11400000, guid: 4d2a385aa8665784bb189257be7b5ffb, type: 2}
+  - {fileID: 11400000, guid: c736967d6ee580348b05c55d2b1828e0, type: 2}
+  - {fileID: 11400000, guid: cf8c8b950a5d10440a03c8caeb381277, type: 2}
   wave7:
   - {fileID: 11400000, guid: 8d9f048339610144dafe87436aeb453e, type: 2}
   - {fileID: 11400000, guid: afd4bfed2f432364dbfc4bb3db2a7d28, type: 2}

@@ -166,16 +166,16 @@ MonoBehaviour:
   player: {fileID: 0}
   agent: {fileID: 0}
   animator: {fileID: 0}
-  DetectRadius: 6
-  InteractionRadius: 4
+  DetectRadius: 9
+  InteractionRadius: 3
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 128
-  IdleSpeed: 3
-  ChaseSpeed: 4
+  IdleSpeed: 1
+  ChaseSpeed: 2
   hasDetected: 0
   isInInteractionRadius: 0
   isInSight: 0
@@ -206,6 +206,7 @@ MonoBehaviour:
   deathParticles: {fileID: 5560324632923741662, guid: b96cda6e35fa51f4ea1d6aa5d989531b, type: 3}
   cantTakeKnockback: 0
   isWorker: 0
+  damageMultiplier: 0
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.25
 --- !u!61 &7798411456286884876
@@ -330,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  timeBetweenAttack: 4
+  timeBetweenAttack: 5
   projectile: {fileID: 1897620257027733417, guid: ca1cc3155ceac6c48bdd6cc6dad961dd, type: 3}
   projectileSpawnPoint: {fileID: 2379017715351544569}
   projectiletype: {fileID: 11400000, guid: 68178e70f5e076842b082d52c71c782d, type: 2}
