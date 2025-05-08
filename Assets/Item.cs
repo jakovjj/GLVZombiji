@@ -16,7 +16,7 @@ public class Item : MonoBehaviour
     }
 
 
-    public void i_burek() {MasterControllerScript.playerHealth += 10f; buyItem();}
+    public void i_burek() {MasterControllerScript.playerHealth += 10; buyItem();}
     public void i_forneti() { MasterControllerScript.playerRegen += 0.1f; buyItem();}
     public void i_mathbook() { MasterControllerScript.redLaserDamage += 7f; buyItem();}
     public void i_physicsbook() { MasterControllerScript.lighningDamage += 2f; buyItem();}

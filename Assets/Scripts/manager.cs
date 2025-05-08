@@ -215,7 +215,10 @@ public class manager : MonoBehaviour
 
     void Update() {
         //Debug.Log(equippedWeapon);
-        texthp.text = hp.ToString()+"/"+MaxPlayerHealth.ToString();
+        MaxPlayerHealth = MasterControllerScript.playerHealth;
+        hp += Time.deltaTime * MasterControllerScript.playerRegen;
+        if (hp > MaxPlayerHealth) hp = MaxPlayerHealth;
+        texthp.text = ((int)hp).ToString()+"/"+((int)MaxPlayerHealth).ToString();
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
         hpbar.value = hp/MaxPlayerHealth;
