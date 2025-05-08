@@ -21668,11 +21668,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f7db29e205e60c842bca25973a88e463, type: 2}
   - {fileID: 11400000, guid: 41d6d0715ef63fe4e885cf6c88498256, type: 2}
   itemVector:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3764998779285548292, guid: 7c76253958b534c48972586cac903b6a, type: 3}
+  - {fileID: 3764998779285548292, guid: add07c2c3d6f63b4e956e0ee6e92e321, type: 3}
+  - {fileID: 3764998779285548292, guid: eca6f5575f3fdba41a578f4c3896b001, type: 3}
+  - {fileID: 3764998779285548292, guid: 09be47460c743764395d591c301b08df, type: 3}
+  - {fileID: 3764998779285548292, guid: 3d45907456a157f49a3df0df568f597b, type: 3}
+  - {fileID: 3764998779285548292, guid: 31fc900c73231a540910e9d56e3258c3, type: 3}
+  - {fileID: 3764998779285548292, guid: e9568e6bf28a3c44982e11f065ff4b64, type: 3}
+  - {fileID: 3764998779285548292, guid: 9779bf42af92d5242921085be5ea12b8, type: 3}
+  - {fileID: 3764998779285548292, guid: dfcbcacc3cec8064e83ec3eca13bc7bf, type: 3}
+  - {fileID: 3764998779285548292, guid: 2d045991e7d688247944f6be7700bc34, type: 3}
   mainUI: {fileID: 1703093748}
   shopUI: {fileID: 1470116415}
   pauseUI: {fileID: 0}
@@ -30808,11 +30813,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0794bd2a8d8d98742b5d361dafa07234, type: 2}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.21
       objectReference: {fileID: 0}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.73
       objectReference: {fileID: 0}
     - target: {fileID: 1473086306683757114, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_LocalPosition.z
