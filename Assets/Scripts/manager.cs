@@ -34,6 +34,8 @@ public class manager : MonoBehaviour
     [SerializeField] zombieSpawn[] wave9 = { };
     [SerializeField] zombieSpawn[] wave10= { };
 
+    public GameObject[] itemVector = {};
+
     public GameObject mainUI;
     public GameObject shopUI;
     public GameObject pauseUI;
