@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5789875304607124339, guid: 247f3697531946243935d49b26fac6c0, type: 3}
+  m_Sprite: {fileID: -8934690439192333644, guid: 9bfc5c2a357956640924ce6e8229c167, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -285,7 +285,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: MATH BOOK
+  m_Text: 'INFORMATICS
+
+    BOOK'
 --- !u!1 &3764998779285548292
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,8 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 12
-  desc: Increases the math laser damage.
-  name: MATH BOOK
+  manager: {fileID: 0}
 --- !u!1 &4006280771988566456
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,9 +588,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Increases the
+  m_Text: 'Boosts the damage
 
-    math laser damage.'
+    multiplier on hacked
+
+    enemies.'
 --- !u!1 &5027278350634998187
 GameObject:
   m_ObjectHideFlags: 0
