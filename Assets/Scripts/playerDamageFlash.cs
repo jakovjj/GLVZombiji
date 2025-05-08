@@ -3,27 +3,25 @@ using System.Collections;
 public class playerDamageFlash : MonoBehaviour
 {
     public GameObject thisUnit;
+    [SerializeField] private Color flashColor = Color.red;
+    [SerializeField] private float flashTime = 0.25f;
+    public SpriteRenderer[] flashSpriteRenderers;
+    public Material[] flashMaterials;
     
-    public float damageMultiplier; void Start()
-    {
-        Init();
+    public float damageMultiplier; 
+    
+    void Start() {
         flashSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        for (int i = 0; i < flashMaterials.Length; i++)
-        {
-            flashMaterials[i].SetFloat("_flashBinaryVal", 1f);
-        }
+        Init();
+        
+        for (int i = 0; i < flashMaterials.Length; i++) {flashMaterials[i].SetFloat("_flashBinaryVal", 1f);}
     }
 
-    // Update is called once per frame
     public void takeDamage()
     {
         StartCoroutine(damageFlash());
     }
     #region damage Flash
-    [SerializeField] private Color flashColor = Color.red;
-    [SerializeField] private float flashTime = 0.25f;
-    private SpriteRenderer[] flashSpriteRenderers;
-    private Material[] flashMaterials;
 
     private IEnumerator damageFlash()
     {
@@ -53,7 +51,7 @@ public class playerDamageFlash : MonoBehaviour
         }
     }
 
-    private void Init()
+    public void Init()
     {
         flashMaterials = new Material[flashSpriteRenderers.Length];
 
