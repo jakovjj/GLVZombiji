@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isDashing;
     public Animator animator;
     public AudioSource coinCollect;
-    float speedSlowMultiplier;
+    public float speedSlowMultiplier;
     void Start()
     {
         speedSlowMultiplier = 1;
@@ -31,13 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(gameObject.GetComponent<IsFrozen>() != null)
-        {
-            speedSlowMultiplier=gameObject.GetComponent<IsFrozen>().freezePercentage;
-        }
-        else
-        {
-            speedSlowMultiplier = 1;
+        if (manager.play == true) {
+            if(gameObject.GetComponent<IsFrozen>() != null) speedSlowMultiplier=gameObject.GetComponent<IsFrozen>().freezePercentage;
+            else speedSlowMultiplier = 1;
         }
         if (manager.play == true) ProcessInput();
         else {movX = 0f; movY = 0f;}

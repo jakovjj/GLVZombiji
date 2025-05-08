@@ -16,9 +16,26 @@ public class manager : MonoBehaviour
     [HideInInspector] public float[] weaponCooldown = { };
     public Projectile[] weaponProjectile = { };
     public GameObject[] bulletPrefabs= { };
+    public PlayerMovement PlayerMovement;
 
     //enemy prefabs
-    public GameObject[] zombie = { };
+
+    public zombieSpawn[] zombie = { };
+    public zombieSpawn[] wave1 = { };
+    public  zombieSpawn[] wave2 = { };
+    [SerializeField] zombieSpawn[] wave3 = { };
+    [SerializeField] zombieSpawn[] wave4 = { };
+    [SerializeField] zombieSpawn[] wave5 = { };
+    [SerializeField] zombieSpawn[] wave6 = { };
+    [SerializeField] zombieSpawn[] wave7 = { };
+    [SerializeField] zombieSpawn[] wave8 = { };
+    [SerializeField] zombieSpawn[] wave9 = { };
+    [SerializeField] zombieSpawn[] wave10= { };
+    [SerializeField] zombieSpawn[] wave11= { };
+    [SerializeField] zombieSpawn[] wave12 = { };
+    [SerializeField] zombieSpawn[] wave13 = { };
+    [SerializeField] zombieSpawn[] wave14 = { };
+    [SerializeField] zombieSpawn[] wave15 = { };
 
     public GameObject mainUI;
     public GameObject shopUI;
@@ -31,11 +48,13 @@ public class manager : MonoBehaviour
     public Text texttime;
     public Text textcoin;
     public Text textcoinshop;
+    public Text wavetextshop;
     public Slider hpbar;
     public GameObject lucko;
 
     void Start() {
         lucko = GameObject.Find("Lucko");
+        PlayerMovement = lucko.transform.GetChild(0).GetComponent<PlayerMovement>();
         equippedWeapon = 0;
         hp = MaxPlayerHealth;
         dmg = 1f; coin = 0;
@@ -56,29 +75,22 @@ public class manager : MonoBehaviour
 
             int rng = Random.Range(0, zombie.Length);
             //Instantiate(zombie[rng-1], new Vector3(posX, posY, 0f), Quaternion.identity);
-            if (rng == 7)
+            for (int i = 0; i < zombie[rng].cnt; i++)
             {
-                for (int i = 0; i < 8; i++)
+                float xOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
+                float yOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
+                Vector3 cur=new Vector3(posX, posY, 0f);
+                Vector3 spawnPosition = cur+  new Vector3(xOffset, yOffset, 0);
+                if (spawnPosition.y < -14|| spawnPosition.y > 14 || spawnPosition.x < -14 || spawnPosition.x > 14)
                 {
-                    float xOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
-                    float yOffset = Random.Range(0f, 1f); // Random offset between 0 and 1
-                    Vector3 cur=new Vector3(posX, posY, 0f);
-                    Vector3 spawnPosition = cur+  new Vector3(xOffset, yOffset, 0);
-                    if (spawnPosition.y < -14|| spawnPosition.y > 14 || spawnPosition.x < -14 || spawnPosition.x > 14)
-                    {
-                        i--;
-                        continue;
-                    }
-                    Instantiate(zombie[rng], spawnPosition, Quaternion.identity);
+                    i--;
+                    continue;
                 }
-            }
-            else
-            {
-                Instantiate(zombie[rng], new Vector3(posX, posY, 0f), Quaternion.identity);
+                Instantiate(zombie[rng].zombieType, spawnPosition, Quaternion.identity);
             }
             
 
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(zombie[rng].downtime);
         }
     }
 
@@ -95,6 +107,7 @@ public class manager : MonoBehaviour
         mainUI.SetActive(false);
         shopUI.SetActive(true);
         play = false;
+        PlayerMovement.speedSlowMultiplier = 0f;
     }
 
     public void newWave() {
@@ -103,7 +116,23 @@ public class manager : MonoBehaviour
         play = true;
 
         timer = 50;
+        PlayerMovement.speedSlowMultiplier = 1f;
         wave = wave+1;
+        if (wave == 1) zombie = wave1;
+        else if (wave == 2) zombie = wave2;
+        else if (wave == 3) zombie = wave3;
+        else if (wave == 4) zombie = wave4;
+        else if (wave == 5) zombie = wave5;
+        else if (wave == 6) zombie = wave6;
+        else if (wave == 7) zombie = wave7;
+        else if (wave == 8) zombie = wave8;
+        else if (wave == 9) zombie = wave9;
+        else if (wave == 10) zombie = wave10;
+        else if (wave == 11) zombie = wave11;
+        else if (wave == 12) zombie = wave12;
+        else if (wave == 13) zombie = wave13;
+        else if (wave == 14) zombie = wave14;
+        else zombie = wave15;
         StartCoroutine(summonZombie());
         StartCoroutine(tickTimer());
     }
@@ -114,6 +143,7 @@ public class manager : MonoBehaviour
         textcoin.text = coin.ToString();
         textcoinshop.text = coin.ToString();
         hpbar.value = hp/MaxPlayerHealth;
+        wavetextshop.text = "Start Wave "+wave.ToString();
 
         textwave.text = "Wave "+wave.ToString();
         texttime.text = timer.ToString();
