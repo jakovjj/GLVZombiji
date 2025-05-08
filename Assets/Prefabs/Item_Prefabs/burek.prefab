@@ -353,8 +353,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 9
-  desc: Increases max health by +10.
-  name: BUREK
   manager: {fileID: 0}
 --- !u!1 &4006280771988566456
 GameObject:

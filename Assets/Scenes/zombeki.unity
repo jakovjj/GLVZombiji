@@ -21663,6 +21663,7 @@ MonoBehaviour:
   - {fileID: 3764998779285548292, guid: 9779bf42af92d5242921085be5ea12b8, type: 3}
   - {fileID: 3764998779285548292, guid: dfcbcacc3cec8064e83ec3eca13bc7bf, type: 3}
   - {fileID: 3764998779285548292, guid: 2d045991e7d688247944f6be7700bc34, type: 3}
+  - {fileID: 3764998779285548292, guid: bbf8409c5ff8c4c47941b8468aed9cd7, type: 3}
   mainUI: {fileID: 1703093748}
   shopUI: {fileID: 1470116415}
   pauseUI: {fileID: 0}
