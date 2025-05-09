@@ -21838,7 +21838,7 @@ MonoBehaviour:
   shopUI: {fileID: 1470116415}
   pauseUI: {fileID: 0}
   gameOverUI: {fileID: 690665642}
-  immortal: 1
+  immortal: 0
   wave: 0
   timer: 0
   texthp: {fileID: 527794001}
