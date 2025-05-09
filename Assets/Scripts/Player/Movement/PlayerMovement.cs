@@ -21,8 +21,10 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public AudioSource coinCollect;
     public float speedSlowMultiplier;
+    public FixedJoystick joystick;
     void Start()
     {
+        //joystick=GetComponent<FixedJoystick>();
         speedSlowMultiplier = 1;
         movX = 0; movY = 0;
         currentSpeed = PlayerSpeed;
@@ -37,11 +39,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (manager.play == true) ProcessInput();
         else {movX = 0f; movY = 0f;}
-
+        Debug.Log(joystick);
         //Apliciraj micanje
         rg2d.linearVelocity = new Vector2(moveDir.x * PlayerSpeed * speedSlowMultiplier, moveDir.y * PlayerSpeed*speedSlowMultiplier);
 
-        if (movX != 0f || movY != 0f) animator.SetBool("walk", true);
+        if (joystick.Horizontal!= 0f || joystick.Vertical != 0f) animator.SetBool("walk", true);
         else animator.SetBool("walk", false);
         //Debug.Log(movX+" "+movY);
     }
@@ -63,12 +65,13 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash(TimeBetweenTheNextDash));
         }
-
-
+        //movX = joystick.Horizontal;
+        //movY = joystick.Vertical;
+        moveDir = joystick.Direction.normalized;
         //Micanje
-        movX = Input.GetAxisRaw("Horizontal");
+        /*movX = Input.GetAxisRaw("Horizontal");
         movY = Input.GetAxisRaw("Vertical");
-        moveDir = new Vector2(movX, movY).normalized;
+        moveDir = new Vector2(movX, movY).normalized;*/
     }
 
     //not currently used

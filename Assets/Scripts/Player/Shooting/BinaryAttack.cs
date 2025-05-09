@@ -9,13 +9,14 @@ public class BinaryAttack : MonoBehaviour
     public float increasePlayerDamageBy;
     public float timeBetweenAttacks;
     private bool canAttack;
+    public FixedJoystick joystick;
     private void Start()
     {
         canAttack = true;
     }
     void Update()
     {
-        if (canAttack && Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 4 && EventSystem.current.IsPointerOverGameObject() == false) // Left mouse button
+        if (canAttack && joystick.Direction.magnitude>0f && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 4/* && EventSystem.current.IsPointerOverGameObject() == false*/) // Left mouse button
         {
             ShootProjectile();
             canAttack = false;
@@ -33,8 +34,8 @@ public class BinaryAttack : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f; // Ensure the projectile stays in 2D space
 
-        Vector3 direction = (mousePosition - transform.position).normalized;
-
+        //Vector3 direction = (mousePosition - transform.position).normalized;
+        Vector3 direction = joystick.Direction.normalized;
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectile.transform.rotation = Quaternion.Euler(0, 0, angle);

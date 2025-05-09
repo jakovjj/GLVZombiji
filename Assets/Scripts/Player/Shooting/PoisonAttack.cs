@@ -10,10 +10,11 @@ public class PoisonAttack : MonoBehaviour
     public float timeBetweenShots = 0.7f;
     public float cldwn;
     //public float projectileSpeed;
+    public FixedJoystick joystick;
     void Update()
     {
         cldwn -= Time.deltaTime * MasterControllerScript.playerAttackSpeed;
-        if (Input.GetMouseButtonDown(0) && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2 && EventSystem.current.IsPointerOverGameObject() == false && cldwn<=0) 
+        if (joystick.Direction.magnitude>0f && GameObject.Find("gameManager").GetComponent<manager>().equippedWeapon == 2/* && EventSystem.current.IsPointerOverGameObject() == false*/ && cldwn<=0) 
         {
             ShootConeAttack();
             cldwn = timeBetweenShots;
@@ -26,7 +27,8 @@ public class PoisonAttack : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
 
-            Vector3 direction = (mousePosition - spawnPoint.position).normalized;
+          //  Vector3 direction = (mousePosition - spawnPoint.position).normalized;
+        Vector3 direction = joystick.Direction.normalized;
         float currentProjectileSpeed = projectileSpeed;
         for (int i = 0; i < 3; i++)
         {

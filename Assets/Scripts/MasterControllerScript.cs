@@ -23,7 +23,7 @@ public class MasterControllerScript : MonoBehaviour
         binaryDamageMult = 2f;
         lighningDamage = 9f;
         playerPoisonDmg = 9f;
-        hyperbeamDamage = 15f;
+        hyperbeamDamage = 20f;
         playerAttackSpeed = 1f;
         playerSpeed = 6f;
         knockbackMult = 1f;

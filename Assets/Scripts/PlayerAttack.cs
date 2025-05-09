@@ -34,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
 
     public delegate void playerShoot(int weapon);
     public playerShoot shoot;
-
+    public Joystick Joystick;
     void shootDefault(int weapon)
     {            
         weapon = playerStats.equippedWeapon;
@@ -68,8 +68,14 @@ public class PlayerAttack : MonoBehaviour
     void Update()   
     {
         mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetButton("Fire1") & gunCooldown<=0 && playerStats.play == true && playerStats.equippedWeapon<=1 && EventSystem.current.IsPointerOverGameObject() == false)
+        float magn = Joystick.Direction.magnitude;
+       // Debug.Log(magn + " : " + 0f + ": " + (magn > 0f));
+       bool m = magn > 0f;
+        Debug.Log(m);
+        if (m && gunCooldown<=0 && playerStats.play == true && playerStats.equippedWeapon<=1/* && EventSystem.current.IsPointerOverGameObject() == false*/)
         {
+            Debug.Log("KAKICA");
+
             shoot?.Invoke(playerStats.equippedWeapon);
         }
         cam.orthographicSize=defaultCameraSize;
@@ -78,8 +84,8 @@ public class PlayerAttack : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector2 lookAt = mousePosition - (Vector2)gunPosition.position;
-
+        //Vector2 lookAt = mousePosition - (Vector2)gunPosition.position;
+        Vector2 lookAt=Joystick.Direction.normalized;
         float angle = Mathf.Atan2(lookAt.y, lookAt.x) * Mathf.Rad2Deg;
         if (angle > 90 || angle < -90)
         {
