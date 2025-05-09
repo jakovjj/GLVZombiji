@@ -140,13 +140,13 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
+
    /* private void OnDrawGizmosSelected()
     {
         Handles.color = Color.yellow;
         Handles.DrawWireDisc(gameObject.transform.position, new Vector3(0, 0, 1), DetectRadius);
     }*/
-=======
+
     /*
     private void OnDrawGizmosSelected()
     {
@@ -154,7 +154,7 @@ public class EnemyMove : MonoBehaviour
         Handles.DrawWireDisc(gameObject.transform.position, new Vector3(0, 0, 1), DetectRadius);
     }
     */
->>>>>>> 5d3c88410bf5d6d8daefae1f181261874a889fd7
+
     IEnumerator stopChase(int time)
     {
         yield return new WaitForSeconds(time);

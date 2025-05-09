@@ -742,7 +742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -158, y: 279}
+  m_AnchoredPosition: {x: -158, y: 215}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &155449710
@@ -9668,7 +9668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55, y: 279}
+  m_AnchoredPosition: {x: -55, y: 215}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &906712212
@@ -14990,7 +14990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -343.7704, y: -18}
+  m_AnchoredPosition: {x: -343.7704, y: -84}
   m_SizeDelta: {x: -28.4592, y: -14.2296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &995023378
@@ -20804,7 +20804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -291, y: -4}
+  m_AnchoredPosition: {x: -291, y: -70}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234375117
@@ -28712,7 +28712,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -233.8, y: -18}
+  m_AnchoredPosition: {x: -233.8, y: -81}
   m_SizeDelta: {x: 125.5311, y: -23.8701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1657584498
@@ -31285,6 +31285,10 @@ PrefabInstance:
     - target: {fileID: 5329770645610355076, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: m_ClearFlags
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5329770645610355076, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
+      propertyPath: orthographic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5712737450091969081, guid: 3584f356a057fb740927113c8c80fd4b, type: 3}
       propertyPath: Joystick
